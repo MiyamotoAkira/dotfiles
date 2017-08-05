@@ -1,0 +1,14 @@
+[user]
+	email = yefo.akira@gmail.com
+	name = MiyamotoAkira
+[core]
+	editor = vim
+	excludesfile = ~/.gitignoreglobal
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+	path = /usr/bin/kdiff3
+[diff]
+	tool = kdiff3
+[difftool "kdiff3"]
+	path = /usr/bin/kdiff3
