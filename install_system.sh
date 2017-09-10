@@ -12,6 +12,11 @@ cshs -s `which zsh`
 cp config_files/akira.zsh-theme  ~/.oh-my-zsh/themes/
 cp config_files/zshrc ~/.zshrc
 
+#emacs
+pacman -S emacs
+cd ~
+git clone http://github.com/miyamotoakira/.emacs.d
+
 # rbenv configuration
 
 # lein configuration
