@@ -28,6 +28,6 @@ lein
 cp ~/code/nix_setup/config_files/lein_profiles.clj ~/.lein/profiles.clj -f
 
 # python pip configuration
-sudo python ~/code/nix_setup/scripts/get-pip.py
-sudo pip install virtualenv
-sudo pip install virtualenvwrapper
+python ~/code/nix_setup/scripts/get-pip.py
+pip install virtualenv
+pip install virtualenvwrapper
