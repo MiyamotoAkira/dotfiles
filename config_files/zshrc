@@ -97,5 +97,5 @@ export PATH="$HOME/bin/node-v6.11.0-linux-x64/lib/:$PATH"
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME="$HOME/code/pythonenvs"
 export PROJECT_HOME="$HOME/code"
-source /usr/local/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 
