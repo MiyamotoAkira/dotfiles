@@ -1,21 +1,27 @@
 #general pacman
-pacman -Syu
+sudo pacman -Syu
 
 # git configuration
-pacman -S git
-cp config_files/gitconfig ~/.gitconfig 
-cp config_files/gitignoreglobal ~/.gitignoreglobal
+sudo pacman -S git
+
+mkdir ~/code -p
+cd ~/code
+git clone https://github.com/MiyamotoAkira/nix_setup.git
+
+cp ~/code/nix_setup/config_files/gitconfig ~/.gitconfig 
+cp ~/code/nix_setup/config_files/gitignoreglobal ~/.gitignoreglobal
 
 # ZSH configuration
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cshs -s `which zsh`
-cp config_files/akira.zsh-theme  ~/.oh-my-zsh/themes/
-cp config_files/zshrc ~/.zshrc
+cp ~/code/nix_setup/config_files/akira.zsh-theme  ~/.oh-my-zsh/themes/
+cp ~/code/nix_setup/config_files/zshrc ~/.zshrc
+#after the above a new terminal is needed
 
 #emacs
-pacman -S emacs
 cd ~
-git clone http://github.com/miyamotoakira/.emacs.d
+git clone https://github.com/MiyamotoAkira/.emacs.d.git
+sudo pacman -S emacs
 
 # rbenv configuration
 
@@ -29,5 +35,5 @@ cp ~/code/nix_setup/config_files/lein_profiles.clj ~/.lein/profiles.clj -f
 
 # python pip configuration
 python ~/code/nix_setup/scripts/get-pip.py
-pip install virtualenv
-pip install virtualenvwrapper
+sudo pip install virtualenv
+sudo pip install virtualenvwrapper
