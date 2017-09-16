@@ -37,3 +37,14 @@ cp ~/code/nix_setup/config_files/lein_profiles.clj ~/.lein/profiles.clj -f
 python ~/code/nix_setup/scripts/get-pip.py
 sudo pip install virtualenv
 sudo pip install virtualenvwrapper
+
+#
+sudo pacman -S base-devel
+sudo pacman -S yaourt
+yaourt slack-desktop
+
+yaourt nohotcorner
+
+sudo pacman -S alacarte
+
+
