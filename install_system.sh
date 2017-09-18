@@ -47,4 +47,7 @@ yaourt nohotcorner
 
 sudo pacman -S alacarte
 
+sudo pacman -S pandoc
 
+sudo pacman -S texlive-most
+sudo pacman -S texlive-lang
