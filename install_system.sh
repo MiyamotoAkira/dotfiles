@@ -49,11 +49,15 @@ sudo pacman -S base-devel
 sudo pacman -S yaourt
 yaourt slack-desktop
 
+# To eliminate the hot corner on gnome
 yaourt nohotcorner
 
+# To create shortcut/launcher icons
 sudo pacman -S alacarte
+
 
 sudo pacman -S pandoc
 
+# For Latex support
 sudo pacman -S texlive-most
 sudo pacman -S texlive-lang
