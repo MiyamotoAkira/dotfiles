@@ -24,6 +24,12 @@ git clone https://github.com/MiyamotoAkira/.emacs.d.git
 sudo pacman -S emacs
 
 # rbenv configuration
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+cd ~/.rbenv && src/configure && make -C sr
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+mkdir -p "$(rbenv root)"/plugins
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+rbenv install 2.4.2
 
 # lein configuration
 mkdir ~/bin
