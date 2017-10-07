@@ -61,3 +61,7 @@ sudo pacman -S pandoc
 # For Latex support
 sudo pacman -S texlive-most
 sudo pacman -S texlive-lang
+
+sudo pacman -S elixir
+
+yaourt dotnet-sdk-2.0
