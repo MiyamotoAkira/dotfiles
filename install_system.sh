@@ -66,3 +66,4 @@ sudo pacman -S texlive-lang
 sudo pacman -S elixir
 
 yaourt dotnet-sdk-2.0
+sudo pacman -S fsharp
