@@ -25,7 +25,8 @@ sudo pacman -S emacs
 
 # rbenv configuration
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-cd ~/.rbenv && src/configure && make -C sr
+cd ~/.rbenv && src/configure && make -C src
+rbenv init
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
 mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
@@ -67,3 +68,4 @@ sudo pacman -S elixir
 
 yaourt dotnet-sdk-2.0
 sudo pacman -S fsharp
+yaourt nuget4
