@@ -64,8 +64,14 @@ sudo pacman -S pandoc
 sudo pacman -S texlive-most
 sudo pacman -S texlive-lang
 
+#Elixir
 sudo pacman -S elixir
 
+# F#
 yaourt dotnet-sdk-2.0
 sudo pacman -S fsharp
 yaourt nuget4
+
+# Java
+sudo pacman -S eclipse-java
+yaourt eclim
