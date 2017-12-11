@@ -3,6 +3,7 @@ sudo pacman -Syu
 
 # git configuration
 sudo pacman -S git
+sudo pacman -S kdiff3
 
 mkdir ~/code -p
 cd ~/code
