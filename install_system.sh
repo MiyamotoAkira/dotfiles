@@ -76,3 +76,4 @@ yaourt nuget4
 # Java
 sudo pacman -S eclipse-java
 yaourt eclim
+sudo pacman -S maven
