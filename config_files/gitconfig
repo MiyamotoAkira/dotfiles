@@ -12,3 +12,8 @@
 	tool = kdiff3
 [difftool "kdiff3"]
 	path = /usr/bin/kdiff3
+[color]
+	diff = auto
+	status = auto
+[color "status"]
+	untracked = magenta
