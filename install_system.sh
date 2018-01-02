@@ -1,6 +1,9 @@
 #general pacman
 sudo pacman -Syu
 
+#dns utils
+sudo pacman -S dnsutils
+
 # git configuration
 sudo pacman -S git
 sudo pacman -S kdiff3
