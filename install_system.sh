@@ -4,6 +4,11 @@ sudo pacman -Syu
 #dns utils
 sudo pacman -S dnsutils
 
+#i3
+sudo pacman -S i3
+sudo pacman -S dmenu
+sudo pacman -S xorg-xrandr
+
 # git configuration
 sudo pacman -S git
 sudo pacman -S kdiff3
@@ -78,6 +83,6 @@ sudo pacman -S fsharp
 yaourt nuget4
 
 # Java
-sudo pacman -S eclipse-java
-yaourt eclim
+yaourt jdk
+yaourt jdk8
 sudo pacman -S maven
