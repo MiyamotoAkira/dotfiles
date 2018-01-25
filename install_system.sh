@@ -7,7 +7,12 @@ sudo pacman -S dnsutils
 #i3
 sudo pacman -S i3
 sudo pacman -S dmenu
+
 sudo pacman -S xorg-xrandr
+sudo pacman -S xorg-xdpyinfo
+
+sudo pacman -S network-manager-applet
+sudo pacman -S blueman
 
 # git configuration
 sudo pacman -S git
@@ -86,3 +91,4 @@ yaourt nuget4
 yaourt jdk
 yaourt jdk8
 sudo pacman -S maven
+
