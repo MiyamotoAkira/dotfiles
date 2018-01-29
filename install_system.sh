@@ -14,6 +14,7 @@ sudo pacman -S xorg-xdpyinfo
 sudo pacman -S network-manager-applet
 sudo pacman -S blueman
 
+sudo pacman -S i3lock
 # git configuration
 sudo pacman -S git
 sudo pacman -S kdiff3
