@@ -1,0 +1,16 @@
+export ZSH=/home/akira/.oh-my-zsh
+export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cask/bin:$HOME/bin/forge:$HOME/apache-maven-3.5.0/bin:$PATH"
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/bin/node-v6.11.0-linux-x64/bin/:$PATH"
+export PATH="$HOME/bin/node-v6.11.0-linux-x64/lib/:$PATH"
+export PATH="$HOME/racket/bin:$PATH"
+
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export WORKON_HOME="$HOME/code/pythonenvs"
+export PROJECT_HOME="$HOME/code"
+
+export JAVA_HOME="/usr/lib/jvm/java-9-jdk/"
+export CATALINA_HOME="/usr/share/tomcat8/"
+export SDKMAN_DIR="/home/akira/.sdkman"

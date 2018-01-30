@@ -1,33 +1,19 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/home/akira/.oh-my-zsh
-
+# Setup of oh my zsh
 ZSH_THEME="akira"
 
 HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(git)
 
-# User configuration
-
 source $ZSH/oh-my-zsh.sh
 
-export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cask/bin:$HOME/bin/forge:$HOME/apache-maven-3.5.0/bin:$PATH"
+# end of setup
 
-export PATH="$HOME/.rbenv/bin:$PATH"
+# ruby
 eval "$(rbenv init -)"
 
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/bin/node-v6.11.0-linux-x64/bin/:$PATH"
-export PATH="$HOME/bin/node-v6.11.0-linux-x64/lib/:$PATH"
-export PATH="$HOME/racket/bin:$PATH"
-
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export WORKON_HOME="$HOME/code/pythonenvs"
-export PROJECT_HOME="$HOME/code"
+# python
 source /usr/bin/virtualenvwrapper.sh
 
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk/"
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/akira/.sdkman"
 [[ -s "/home/akira/.sdkman/bin/sdkman-init.sh" ]] && source "/home/akira/.sdkman/bin/sdkman-init.sh"
