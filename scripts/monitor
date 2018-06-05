@@ -1,0 +1,76 @@
+#!/bin/zsh
+
+usage() {
+    echo "Usage: monitor [options]"
+    echo "Where options are"
+    echo "-w --width Width of the secondary monitor"
+    echo "-l --height Height of the secondary monitor"
+    echo "-m --mode Mode to use. \"s\" for single monitor. \"e\" for just external. \"2\" for dual monitor. If you ommit -m, the single monitor option is selected."
+    exit 1
+}
+
+change_display() {
+    local mode="$1"
+    local width="$2"
+    local height="$3"
+    D_width=$((width * 2))
+    D_height=$((height * 2))
+
+    I_width=3200
+    I_height=1800
+    
+    D_width_total=$((D_width + I_width))
+    D_height_total=$((D_height + I_height))
+
+    if [ "$mode" = "2" ];  then
+         xrandr --dpi 276 --fb "$D_width_total"x"$D_height_total" --output eDP1 --mode "$I_width"x"$I_height" --output DP1 --auto --scale 2x2 --panning "$D_width"x"$D_height"+"$I_width"+0 --right-of eDP1 
+    elif [ "$mode" = "e" ]; then
+         xrandr --dpi 276 --fb "$D_width"x"$D_height" --output eDP1 --off --output DP1 --auto --scale 2x2 --panning "$D_width"x"$D_height"
+    else
+        xrandr --dpi 276 --fb "$I_width"x"$I_height" --output eDP1 --mode "$I_width"x"$I_height" --output DP1 --off
+     fi
+}
+
+
+width=2560   # These are the defaults for my work monitor
+height=1440
+mode="s"
+help="NO"
+
+while [[ $# -gt 0 ]]
+do
+key="$1"
+
+case $key in
+    -w|--width)
+        width="$2"
+        shift
+        shift
+        ;;
+    -l|--height)
+        height="$2"
+        shift
+        shift
+        ;;
+    -m|--mode)
+        mode="$2"
+        shift
+        shift
+        ;;
+    -h|--help)
+        help="YES"
+        shift
+        ;;
+    *)
+        echo "Option not recognized: ${1}"
+        help="YES"
+        shift
+        ;;
+esac
+done
+
+if [ "$help" = "YES" ]; then
+    usage
+else
+    change_display "$mode" "$width" "$height"
+fi
