@@ -15,5 +15,11 @@ eval "$(rbenv init -)"
 # python
 source /usr/bin/virtualenvwrapper.sh
 
+# To disable bracketed paste on emacs
+if [[ $TERM = dumb ]]; then
+  unset zle_bracketed_paste
+fi
+
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "/home/akira/.sdkman/bin/sdkman-init.sh" ]] && source "/home/akira/.sdkman/bin/sdkman-init.sh"

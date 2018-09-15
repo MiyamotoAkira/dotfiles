@@ -6,11 +6,12 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/bin/node-v6.11.0-linux-x64/bin/:$PATH"
 export PATH="$HOME/bin/node-v6.11.0-linux-x64/lib/:$PATH"
 export PATH="$HOME/racket/bin:$PATH"
+export PATH="$HOME/bin/purescript/:$PATH"
 
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME="$HOME/code/pythonenvs"
 export PROJECT_HOME="$HOME/code"
 
-export JAVA_HOME="/usr/lib/jvm/java-9-jdk/"
+export JAVA_HOME="/usr/lib/jvm/java-8-jdk/"
 export CATALINA_HOME="/usr/share/tomcat8/"
 export SDKMAN_DIR="/home/akira/.sdkman"
