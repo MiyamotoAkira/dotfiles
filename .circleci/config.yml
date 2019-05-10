@@ -5,14 +5,14 @@ jobs:
     docker:
       - image: linuxmintd/mint19.1-amd64
     steps:
-      - run: setup.sh
       - run: mint/up.sh
+      - run: test.sh
   fedora:
     docker:
-      - image: fedora
+      - image: fedora:30
     steps:
-      - run: setup.sh
       - run: fedora/up.sh
+      - run: test.sh
 
 workflows:
   version: 2
