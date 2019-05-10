@@ -10,7 +10,7 @@ jobs:
       - run: ./test.sh
   fedora:
     docker:
-      - image: fedora:30
+      - image: jorgegueorguiev/fedora-sudo
     steps:
       - checkout
       - run: fedora/up.sh
