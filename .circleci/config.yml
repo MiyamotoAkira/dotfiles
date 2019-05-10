@@ -1,0 +1,25 @@
+version: 2.0
+
+jobs:
+  mint:
+    docker:
+      - image: linuxmintd/mint19.1-amd64
+    steps:
+      - run: setup.sh
+      - run: mint/up.sh
+  fedora:
+    docker:
+      - image: fedora
+    steps:
+      - run: setup.sh
+      - run: fedora/up.sh
+
+workflows:
+  version: 2
+  mint:
+    jobs:
+      - mint
+
+  fedora:
+    jobs:
+      - fedora
