@@ -13,8 +13,8 @@ sudo apt-get -y install zsh curl wget net-tools software-properties-common coreu
 wget -q https://packages.microsoft.com/config/ubuntu/18.10/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 
-sudo apt-get install apt-transport-https
-sudo apt-get update
-sudo apt-get install dotnet-sdk-2.2
+sudo apt-get -y install apt-transport-https
+sudo apt-get -y update
+sudo apt-get -y install dotnet-sdk-2.2
 
 "common/common-configuration.sh"

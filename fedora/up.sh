@@ -20,5 +20,5 @@ wget -q https://packages.microsoft.com/config/fedora/27/prod.repo
 sudo mv prod.repo /etc/yum.repos.d/microsoft-prod.repo
 sudo chown root:root /etc/yum.repos.d/microsoft-prod.repo
 
-sudo dnf update
-sudo dnf install dotnet-sdk-2.2
+sudo dnf -y update
+sudo dnf -y install dotnet-sdk-2.2
