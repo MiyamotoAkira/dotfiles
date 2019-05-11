@@ -11,4 +11,4 @@ sudo apt-get -y install zsh curl wget net-tools software-properties-common coreu
 
 
 
-"../common/common-configuration.sh"
+"common/common-configuration.sh"
