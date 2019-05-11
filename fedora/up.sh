@@ -11,7 +11,7 @@ sudo dnf -y groupupdate core
 sudo dnf -y upgrade --best --allowerasing
 sudo dnf -y --best --allowerasing install zsh
 
-sudo dnf -y --best --allowerasing install  install curl wget util-linux-user mercurial kdiff3
+sudo dnf -y --best --allowerasing install curl wget util-linux-user mercurial kdiff3
 
 
 # Dotnet packages
