@@ -23,7 +23,24 @@ chmod +x "$RUSTUP_TEMP"
 "$RUSTUP_TEMP" -y
 rm -f "$RUSTUP_TEMP"
 
-# Rbenv
+set +e
+rustup update
+set -e
+rustup install stable
+set +e
+rustup install nightly
+set -e
+rustup default stable
+
+rustup component add rustfmt --toolchain stable
+
+set +e
+rustup component add rustfmt --toolchain nightly
+set -e
+
+
+
+# Ruby and Rbenv
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 mkdir -p "$(~/.rbenv/bin/rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(~/.rbenv/bin/rbenv root)"/plugins/ruby-build
