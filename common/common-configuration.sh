@@ -7,7 +7,6 @@ chsh -s $(which zsh)
 #copy zsh config files
 cp config_files/zshenv ~/.zshenv
 cp config_files/zshrc ~/.zshrc
-cp config_files/zprofile ~/.zprofile
 
 # Copy git config files
 cp config_files/gitconfig ~/.gitconfig
