@@ -11,8 +11,11 @@ sudo dnf -y groupupdate core
 sudo dnf -y upgrade --best --allowerasing
 sudo dnf -y --best --allowerasing install zsh
 
-sudo dnf -y --best --allowerasing install curl wget util-linux-user mercurial kdiff3 openssl-devel readline-devel ffmpeg-libs dnf-plugins-core 
+sudo dnf -y --best --allowerasing install curl wget util-linux-user mercurial kdiff3 openssl-devel readline-devel ffmpeg-libs dnf-plugins-core  fedora
 
+# Install chrome
+sudo dnf install fedora-workstation-repositories
+sudo dnf config-manager --set-enabled google-chrome
 
 # Dotnet packages
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
