@@ -25,3 +25,5 @@ rm -f "$RUSTUP_TEMP"
 
 # Rbenv
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+
+~/.rbenv/bin/rbenv install 2.5.1
