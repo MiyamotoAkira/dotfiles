@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 eval "$(rbenv init -)"
 
 # python
-source /usr/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 
 # To disable bracketed paste on emacs
 if [[ $TERM = dumb ]]; then
