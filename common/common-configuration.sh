@@ -25,8 +25,8 @@ rm -f "$RUSTUP_TEMP"
 
 # Rbenv
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-mkdir -p "$(rbenv root)"/plugins
-git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+mkdir -p "$(~/.rbenv/bin/rbenv root)"/plugins
+git clone https://github.com/rbenv/ruby-build.git "$(~/.rbenv/bin/rbenv root)"/plugins/ruby-build
 
 ~/.rbenv/bin/rbenv init -
 ~/.rbenv/bin/rbenv install 2.5.1
