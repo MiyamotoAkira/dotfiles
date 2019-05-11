@@ -39,7 +39,8 @@ set +e
 rustup component add rustfmt --toolchain nightly
 set -e
 
-
+# Haskell
+sudo curl -sSL https://get.haskellstack.org/ | sh
 
 # Ruby and Rbenv
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
