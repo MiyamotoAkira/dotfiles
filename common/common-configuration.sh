@@ -50,3 +50,7 @@ git clone https://github.com/rbenv/ruby-build.git "$(~/.rbenv/bin/rbenv root)"/p
 ~/.rbenv/bin/rbenv init -
 ~/.rbenv/bin/rbenv install 2.5.1
 ~/.rbenv/bin/rbenv global 2.5.1
+
+# SDKMan
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
