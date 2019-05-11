@@ -22,3 +22,5 @@ sudo chown root:root /etc/yum.repos.d/microsoft-prod.repo
 
 sudo dnf -y update
 sudo dnf -y install dotnet-sdk-2.2
+
+"common/common-configuration.sh"
