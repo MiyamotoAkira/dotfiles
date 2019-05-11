@@ -11,4 +11,14 @@ sudo dnf -y groupupdate core
 sudo dnf -y upgrade --best --allowerasing
 sudo dnf -y --best --allowerasing install zsh
 
-chsh -s $(which zsh)
+sudo dnf -y --best --allowerasing install  install curl wget util-linux-user mercurial kdiff3
+
+
+# Dotnet packages
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+wget -q https://packages.microsoft.com/config/fedora/27/prod.repo
+sudo mv prod.repo /etc/yum.repos.d/microsoft-prod.repo
+sudo chown root:root /etc/yum.repos.d/microsoft-prod.repo
+
+sudo dnf update
+sudo dnf install dotnet-sdk-2.2
