@@ -23,6 +23,8 @@ chmod +x "$RUSTUP_TEMP"
 "$RUSTUP_TEMP" -y
 rm -f "$RUSTUP_TEMP"
 
+source $HOME/.cargo/env
+
 set +e
 rustup update
 set -e
