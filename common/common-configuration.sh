@@ -55,3 +55,10 @@ git clone https://github.com/rbenv/ruby-build.git "$(~/.rbenv/bin/rbenv root)"/p
 # curl -s "https://get.sdkman.io" | bash
 # source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# Emacs
+EMACS_TEMP="/tmp/emacs-26.2.tar.gz"
+curl https://mirrors.ocf.berkeley.edu/gnu/emacs/emacs-26.2.tar.gz -o "$EMACS_TEMP"
+tar -xvzf "$EMACS_TEMP"
+/tmp/emacs-26.2/configure
+/tmp/emacs-26.2/make
+/tmp/emacs-26.2/make install
