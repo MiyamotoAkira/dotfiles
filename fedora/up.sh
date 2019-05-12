@@ -11,7 +11,7 @@ sudo dnf -y groupupdate core
 sudo dnf -y upgrade --best --allowerasing
 sudo dnf -y --best --allowerasing install zsh
 
-sudo dnf -y --best --allowerasing install curl wget util-linux-user mercurial kdiff3 openssl-devel readline-devel ffmpeg-libs dnf-plugins-core firefox unzip zip libgnutls28-dev libgnutls30
+sudo dnf -y --best --allowerasing install curl wget util-linux-user mercurial kdiff3 openssl-devel readline-devel ffmpeg-libs dnf-plugins-core firefox unzip zip
 
 # Install chrome
 sudo dnf -y install fedora-workstation-repositories
