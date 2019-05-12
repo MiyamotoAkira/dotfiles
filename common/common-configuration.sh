@@ -53,4 +53,4 @@ git clone https://github.com/rbenv/ruby-build.git "$(~/.rbenv/bin/rbenv root)"/p
 
 # SDKMan
 curl -s "https://get.sdkman.io" | bash
-source "$HOME/.sdkman/bin/sdkman-init.sh"
+sudo source "$HOME/.sdkman/bin/sdkman-init.sh"
