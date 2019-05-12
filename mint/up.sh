@@ -11,8 +11,8 @@ sudo apt-get -y install zsh curl wget net-tools software-properties-common coreu
 # Install chrome
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/chrome.list
 sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-sudo apt-get update
-sudo apt-get install google-chrome-stable
+sudo apt-get -y update
+sudo apt-get -y install google-chrome-stable
 
 # Dot net packages
 wget -q https://packages.microsoft.com/config/ubuntu/18.10/packages-microsoft-prod.deb
