@@ -22,4 +22,8 @@ sudo apt-get -y install apt-transport-https
 sudo apt-get -y update
 sudo apt-get -y install dotnet-sdk-2.2
 
+# preparing for building emacs
+sudo apt-get install build-essential
+sudo apt-get build-dep emacs24
+
 "common/common-configuration.sh"
