@@ -26,6 +26,6 @@ sudo chown root:root /etc/yum.repos.d/microsoft-prod.repo
 sudo dnf -y update
 sudo dnf -y install dotnet-sdk-2.2
 
-sudo dnf builddep emacs
+sudo dnf -y builddep emacs
 
 "common/common-configuration.sh"
