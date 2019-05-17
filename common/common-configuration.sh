@@ -63,6 +63,6 @@ curl https://mirrors.ocf.berkeley.edu/gnu/emacs/emacs-26.2.tar.gz -o "$EMACS_TEM
 tar -xvzf "$EMACS_TEMP" -C "$EMACS_TEMP_FOLDER"
 cd $EMACS_TEMP_FOLDER/emacs-26.2/
 ./configure
-./make
-sudo $./make install
+make
+sudo make install
 cd -
