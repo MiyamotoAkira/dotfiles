@@ -24,6 +24,6 @@ sudo apt-get -y install dotnet-sdk-2.2
 
 # preparing for building emacs
 sudo apt-get install build-essential
-sudo apt-get build-dep emacs24
+sudo apt-get build-dep emacs25
 
 "common/common-configuration.sh"
