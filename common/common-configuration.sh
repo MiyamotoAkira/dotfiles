@@ -61,6 +61,8 @@ mkdir -p "$EMACS_TEMP_FOLDER"
 EMACS_TEMP="~/tmp/emacs-26.2.tar.gz"
 curl https://mirrors.ocf.berkeley.edu/gnu/emacs/emacs-26.2.tar.gz -o "$EMACS_TEMP"
 tar -xvzf "$EMACS_TEMP" -C "$EMACS_TEMP_FOLDER"
-$EMACS_TEMP_FOLDER/emacs-26.2/configure
-$EMACS_TEMP_FOLDERm/emacs-26.2/make
-sudo $EMACS_TEMP_FOLDER/emacs-26.2/make install
+cd $EMACS_TEMP_FOLDER/emacs-26.2/
+./configure
+./make
+sudo $./make install
+cd -
