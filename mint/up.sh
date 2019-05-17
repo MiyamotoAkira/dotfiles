@@ -23,7 +23,6 @@ sudo apt-get -y update
 sudo apt-get -y install dotnet-sdk-2.2
 
 # preparing for building emacs
-sudo apt-get -y install build-essential
 DEBIAN_FRONTEND=noninteractive sudo apt-get -y build-dep emacs25
 
 "common/common-configuration.sh"
