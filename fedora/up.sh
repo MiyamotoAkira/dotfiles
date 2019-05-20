@@ -11,7 +11,7 @@ sudo dnf -y groupupdate core
 sudo dnf -y upgrade --best --allowerasing
 sudo dnf -y --best --allowerasing install zsh
 
-sudo dnf -y --best --allowerasing install curl wget util-linux-user mercurial kdiff3 openssl-devel readline-devel ffmpeg-libs dnf-plugins-core firefox unzip zip pandoc the_silver_searcher
+sudo dnf -y --best --allowerasing install curl wget util-linux-user mercurial kdiff3 openssl-devel readline-devel ffmpeg-libs dnf-plugins-core firefox unzip zip pandoc the_silver_searcher vim-enhanced
 
 # Install chrome
 sudo dnf -y install fedora-workstation-repositories
