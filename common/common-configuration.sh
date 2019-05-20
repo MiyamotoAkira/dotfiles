@@ -61,8 +61,13 @@ mkdir -p "$EMACS_TEMP_FOLDER"
 EMACS_TEMP="~/tmp/emacs-26.2.tar.gz"
 curl https://mirrors.ocf.berkeley.edu/gnu/emacs/emacs-26.2.tar.gz -o "$EMACS_TEMP"
 tar -xvzf "$EMACS_TEMP" -C "$EMACS_TEMP_FOLDER"
-cd $EMACS_TEMP_FOLDER/emacs-26.2/
-./configure
-make
-sudo make install
-cd -
+
+# Needs to be build from a no dockerize system due to issues with emacs build
+# See:
+# https://debbugs.gnu.org/cgi/bugreport.cgi?bug=23529
+# https://stackoverflow.com/questions/37544423/how-to-build-emacs-from-source-in-docker-hub-gap-between-bss-and-heap
+# cd $EMACS_TEMP_FOLDER/emacs-26.2/
+# ./configure
+# make
+# sudo make install
+# cd -
