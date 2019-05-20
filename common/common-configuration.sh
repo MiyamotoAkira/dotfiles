@@ -71,3 +71,7 @@ tar -xvzf "$EMACS_TEMP" -C "$EMACS_TEMP_FOLDER"
 # make
 # sudo make install
 # cd -
+
+# Oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+cp config_files/akira.zsh-theme ~/.oh-my-zsh/themes
