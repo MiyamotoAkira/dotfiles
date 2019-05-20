@@ -4,10 +4,6 @@ set -euo pipefail
 
 chsh -s $(which zsh)
 
-#copy zsh config files
-cp config_files/zshenv ~/.zshenv
-cp config_files/zshrc ~/.zshrc
-
 # Copy git config files
 cp config_files/gitconfig ~/.gitconfig
 cp config_files/gitignoreglobal ~/.gitignoreglobal
@@ -76,3 +72,8 @@ tar -xvzf "$EMACS_TEMP" -C "$EMACS_TEMP_FOLDER"
 # https://github.com/robbyrussell/oh-my-zsh/issues/5873
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed 's:env zsh -l::g' | sed 's:chsh -s .*$::g')"
 cp config_files/akira.zsh-theme ~/.oh-my-zsh/themes
+
+#copy zsh config files
+cp config_files/zshenv ~/.zshenv
+cp config_files/zshrc ~/.zshrc
+
