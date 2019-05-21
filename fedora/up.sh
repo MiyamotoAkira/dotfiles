@@ -30,7 +30,7 @@ sudo dnf -y builddep emacs
 
 
 # Install dropbox
-curl -O https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2019.02.14-1.fedora.x86_64.rpm
+curl -O https://linux.dropbox.com/packages/fedora/nautilus-dropbox-2019.02.14-1.fedora.x86_64.rpm
 sudo dnf -y install nautilus-dropbox-2019.02.14-1.fedora.x86_64.rpm
 
 "common/common-configuration.sh"
