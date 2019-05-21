@@ -30,6 +30,7 @@ sudo apt-get -y build-dep emacs25
 #Install dropbox
 curl -O https://linux.dropbox.com/packages/ubuntu/dropbox_2019.02.14_amd64.deb
 #sudo mk-build-deps -i dropbox_2019.02.14_amd64.deb
+sudo apt-get -y install libpango
 sudo dpkg -i dropbox_2019.02.14_amd64.deb
 
 "common/common-configuration.sh"
