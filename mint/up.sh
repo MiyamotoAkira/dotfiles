@@ -6,7 +6,7 @@ sudo apt-get update
 sudo apt-get -y upgrade
 
 # Basic packages
-sudo apt-get -y install zsh curl wget net-tools software-properties-common coreutils xclip libssl-dev libreadline-dev zlib1g-dev mercurial kdiff3 firefox unzip zip pandoc silversearcher-ag
+sudo apt-get -y install zsh curl wget net-tools software-properties-common coreutils xclip libssl-dev libreadline-dev zlib1g-dev mercurial kdiff3 firefox unzip zip pandoc silversearcher-ag devscripts
 
 # Install chrome
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/chrome.list
@@ -29,6 +29,6 @@ sudo apt-get -y build-dep emacs25
 
 #Install dropbox
 curl -O https://linux.dropbox.com/packages/ubuntu/dropbox_2019.02.14_amd64.deb
-sudo dpkg -i dropbox_2019.02.14_amd64.deb
+sudo mk-build-deps -i dropbox_2019.02.14_amd64.deb
 
 "common/common-configuration.sh"
