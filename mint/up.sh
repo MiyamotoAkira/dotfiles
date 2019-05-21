@@ -27,4 +27,8 @@ debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No configur
 debconf-set-selections <<< "postfix postfix/mailname string twoormore.eu"
 sudo apt-get -y build-dep emacs25
 
+#Install dropbox
+curl -O https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2019.02.14_amd64.deb
+sudo dpkg -i dropbox_2019.02.14_amd64.deb
+
 "common/common-configuration.sh"
