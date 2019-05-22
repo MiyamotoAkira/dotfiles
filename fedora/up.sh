@@ -35,7 +35,6 @@ sudo dnf -y install nautilus-dropbox-2019.02.14-1.fedora.x86_64.rpm
 
 # Install notopleftcorner
 rm -f ~/bin/install-gnome-extensions.sh; wget -N -q "https://raw.githubusercontent.com/cyfrost/install-gnome-extensions/master/install-gnome-extensions.sh" -O ~/bin/install-gnome-extensions.sh && chmod +x install-gnome-extensions.sh && ~/bin/install-gnome-extensions.sh
-"https://extensions.gnome.org/extension/118/no-topleft-hot-corner/" >> links.txt
-~/bin/install-gnome-extensions.sh --enable --file links.txt
+~/bin/install-gnome-extensions.sh --enable 118
 
 "common/common-configuration.sh"
