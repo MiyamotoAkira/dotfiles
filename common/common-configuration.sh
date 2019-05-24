@@ -68,9 +68,6 @@ tar -xvzf "$EMACS_TEMP" -C "$EMACS_TEMP_FOLDER"
 # sudo make install
 # cd -
 
-# Stack for Haskell
-curl -sSL https://get.haskellstack.org/ | sh
-
 # Oh my zsh
 # https://github.com/robbyrussell/oh-my-zsh/issues/5873
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed 's:env zsh -l::g' | sed 's:chsh -s .*$::g')"
