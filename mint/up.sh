@@ -28,7 +28,8 @@ sudo apt-get -y install \
      jq \
      apt-transport-https \
      ca-certificates \
-     gnupg-agent
+     gnupg-agent \
+     python-requests
 
 # Install chrome
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
