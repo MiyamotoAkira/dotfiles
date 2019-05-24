@@ -25,8 +25,10 @@ sudo apt-get -y install \
      pandoc \
      silversearcher-ag \
      devscripts \
-     jq
-
+     jq \
+     apt-transport-https \
+     ca-certificates \
+     gnupg-agent
 
 # Install chrome
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/chrome.list
@@ -52,5 +54,18 @@ curl -O https://linux.dropbox.com/packages/ubuntu/dropbox_2019.02.14_amd64.deb
 #sudo mk-build-deps -i dropbox_2019.02.14_amd64.deb
 sudo apt-get -y install libpango1.0-0
 sudo dpkg -i dropbox_2019.02.14_amd64.deb
+
+# installing docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo usermod -aG docker $USER
+sudo systemctl start docker
+sudo systemctl enable docker
+
 
 "common/common-configuration.sh"
