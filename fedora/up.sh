@@ -51,7 +51,7 @@ sudo dnf -y install nautilus-dropbox-2019.02.14-1.fedora.x86_64.rpm
 sudo dnf config-manager \
      --add-repo \
      https://download.docker.com/linux/fedora/docker-ce.repo
-sudo dnf install docker-ce docker-ce-cli containerd.io
+sudo dnf -y install docker-ce docker-ce-cli containerd.io
 sudo usermod -aG docker $(whoami)
 sudo systemctl start docker
 sudo systemctl enable docker
