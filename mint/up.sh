@@ -6,7 +6,27 @@ sudo apt-get update
 sudo apt-get -y upgrade
 
 # Basic packages
-sudo apt-get -y install zsh curl wget net-tools software-properties-common coreutils xclip libssl-dev libreadline-dev zlib1g-dev mercurial kdiff3 firefox unzip zip pandoc silversearcher-ag devscripts jq
+sudo apt-get -y install \
+     zsh \
+     curl \
+     wget \
+     net-tools \
+     software-properties-common \
+     coreutils \
+     xclip \
+     libssl-dev \
+     libreadline-dev \
+     zlib1g-dev \
+     mercurial \
+     kdiff3 \
+     firefox \
+     unzip \
+     zip \
+     pandoc \
+     silversearcher-ag \
+     devscripts \
+     jq
+
 
 # Install chrome
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/chrome.list
