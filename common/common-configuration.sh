@@ -60,6 +60,13 @@ sudo chmod a+x terraform
 mv terraform ~/bin
 rm terraform_0.12.0_linux_amd64.zip
 
+# Link
+curl -O https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+sudo chmod a+x lein
+mv lein ~/bin
+mkdir ~/.lein
+cp config_files/lein_profiles.clj ~/.lein/profiles.clj
+
 
 # Emacs
 EMACS_TEMP_FOLDER="~/tmp/emacs"
