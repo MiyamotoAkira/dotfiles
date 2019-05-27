@@ -4,6 +4,8 @@ set -euo pipefail
 
 chsh -s $(which zsh)
 
+mkdir ~/bin/
+
 # Copy git config files
 cp config_files/gitconfig ~/.gitconfig
 cp config_files/gitignoreglobal ~/.gitignoreglobal
@@ -50,6 +52,14 @@ git clone https://github.com/rbenv/ruby-build.git "$(~/.rbenv/bin/rbenv root)"/p
 # SDKMan
 # curl -s "https://get.sdkman.io" | bash
 # source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Terrafom
+curl -O https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_linux_amd64.zip
+unzip terraform_0.12.0_linux_amd64.zip
+sudo chmod a+x terraform
+mv terraform ~/bin
+rm terraform_0.12.0_linux_amd64.zip
+
 
 # Emacs
 EMACS_TEMP_FOLDER="~/tmp/emacs"
