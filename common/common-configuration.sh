@@ -94,3 +94,5 @@ cp config_files/akira.zsh-theme ~/.oh-my-zsh/themes
 cp config_files/zshenv ~/.zshenv
 cp config_files/zshrc ~/.zshrc
 
+# Add nvm for node installations
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
