@@ -77,5 +77,7 @@ sudo apt-get -y install nautilus-dropbox
 # sudo systemctl start docker
 # sudo systemctl enable docker
 
+curl -O https://downloads.slack-edge.com/linux_releases/slack-desktop-3.4.2-amd64.deb
+sudo dpkg -i slack-desktop-3.4.2-amd64.deb
 
 "common/common-configuration.sh"

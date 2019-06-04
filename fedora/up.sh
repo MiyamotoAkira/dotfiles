@@ -63,4 +63,8 @@ sudo dnf -y install nautilus-dropbox-2019.02.14-1.fedora.x86_64.rpm
 # sudo systemctl start docker
 # sudo systemctl enable docker
 
+# install slack
+curl -O https://downloads.slack-edge.com/linux_releases/slack-3.4.2-0.1.fc21.x86_64.rpm
+sudo dnf -y install slack-3.4.2-0.1.fc21.x86_64.rpm
+
 "common/common-configuration.sh"
