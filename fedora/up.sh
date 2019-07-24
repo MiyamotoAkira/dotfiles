@@ -26,6 +26,7 @@ sudo dnf -y --best --allowerasing install \
      the_silver_searcher \
      vim-enhanced \
      gnome-tweak-tool \
+     elixir\
      jq
 
 # Install chrome
