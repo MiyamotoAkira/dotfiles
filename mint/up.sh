@@ -53,10 +53,10 @@ sudo apt update
 sudo apt-get -y install mono-complete
 
 # Elixir
-sudo wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
-sudo apt-get update
-sudo apt-get install esl-erlang
-sudo apt-get install elixir
+# sudo wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
+# sudo apt-get update
+# sudo apt-get install esl-erlang
+# sudo apt-get install elixir
 
 # preparing for building emacs
 debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No configuration'"
