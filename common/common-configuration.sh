@@ -87,7 +87,7 @@ tar -xvzf "$EMACS_TEMP" -C "$EMACS_TEMP_FOLDER"
 
 # Oh my zsh
 # https://github.com/robbyrussell/oh-my-zsh/issues/5873
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed 's:env zsh -l::g' | sed 's:chsh -s .*$::g')"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" --unattended
 cp config_files/akira.zsh-theme ~/.oh-my-zsh/themes
 
 #copy zsh config files
