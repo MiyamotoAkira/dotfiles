@@ -69,11 +69,11 @@ cp config_files/lein_profiles.clj ~/.lein/profiles.clj
 
 
 # Emacs
-# EMACS_TEMP_FOLDER="~/tmp/emacs"
-# mkdir -p "$EMACS_TEMP_FOLDER"
-# EMACS_TEMP="~/tmp/emacs-26.2.tar.gz"
-# curl https://mirrors.ocf.berkeley.edu/gnu/emacs/emacs-26.2.tar.gz -o "$EMACS_TEMP"
-# tar -xvzf "$EMACS_TEMP" -C "$EMACS_TEMP_FOLDER"
+EMACS_TEMP_FOLDER="~/tmp/emacs"
+mkdir -p "$EMACS_TEMP_FOLDER"
+EMACS_TEMP="~/tmp/emacs-26.2.tar.gz"
+curl https://mirrors.ocf.berkeley.edu/gnu/emacs/emacs-26.2.tar.gz -o "$EMACS_TEMP"
+tar -xvzf "$EMACS_TEMP" -C "$EMACS_TEMP_FOLDER"
 
 # Needs to be build from a no dockerize system due to issues with emacs build
 # See:
