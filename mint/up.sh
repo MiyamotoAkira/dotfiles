@@ -51,7 +51,7 @@ mv exa-linux-x86_64 ~/bin/exa
 rm exa-linux-x86_64-0.9.0.zip
 
 # Dot net packages
-wget -q https://packages.microsoft.com/config/ubuntu/18.10/packages-microsoft-prod.deb
+wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 
 sudo add-apt-repository -y universe
