@@ -46,6 +46,7 @@ rm bat_0.12.1_amd64.deb
 # Install exa
 wget -q https://github.com/ogham/exa/releases/download/v0.9.0/exa-linux-x86_64-0.9.0.zip
 unzip exa-linux-x86_64-0.9.0.zip
+mkdir ~/bin
 mv exa-linux-x86_64 ~/bin/exa
 rm exa-linux-x86_64-0.9.0.zip
 
