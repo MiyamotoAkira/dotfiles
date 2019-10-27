@@ -13,9 +13,6 @@ cp config_files/gitignoreglobal ~/.gitignoreglobal
 mkdir -p ~/code/personal/
 mkdir -p ~/code/codurance/
 
-# Cask
-curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
-
 # Rust
 RUSTUP_TEMP="/tmp/temp_rust.sh"
 curl https://sh.rustup.rs -sSf > "$RUSTUP_TEMP"
@@ -87,6 +84,8 @@ tar -xvzf "$EMACS_TEMP" -C "$EMACS_TEMP_FOLDER"
 # make
 # sudo make install
 # cd -
+# Cask
+# curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
 
 # Oh my zsh
 # https://github.com/robbyrussell/oh-my-zsh/issues/5873
