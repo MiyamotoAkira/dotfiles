@@ -38,13 +38,26 @@ sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-ke
 sudo apt-get -y update
 sudo apt-get -y install google-chrome-stable
 
+# Install bat
+wget -q https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
+sudo dpkg -i bat_0.12.1_amd64.deb
+rm bat_0.12.1_amd64.deb
+
+# Install exa
+wget -w https://github.com/ogham/exa/releases/download/v0.9.0/exa-linux-x86_64-0.9.0.zip
+unzip exa-linux-x86_64-0.9.0.zip
+mv exa-linux-x86_64 ~/bin/exa
+rm exa-linux-x86_64-0.9.0.zip
+
 # Dot net packages
 wget -q https://packages.microsoft.com/config/ubuntu/18.10/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 
+sudo add-apt-repository -y universe
+sudo apt-get -y update
 sudo apt-get -y install apt-transport-https
 sudo apt-get -y update
-sudo apt-get -y install dotnet-sdk-2.2
+sudo apt-get -y install dotnet-sdk-3.0
 
 # Mono
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF

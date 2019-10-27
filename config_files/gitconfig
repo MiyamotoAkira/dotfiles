@@ -6,6 +6,7 @@
 	excludesfile = ~/.gitignoreglobal
 [merge]
 	tool = kdiff3
+        conflictStyle = diff3
 [mergetool "kdiff3"]
 	path = /usr/bin/kdiff3
 [diff]

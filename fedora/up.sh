@@ -27,6 +27,8 @@ sudo dnf -y --best --allowerasing install \
      vim-enhanced \
      gnome-tweak-tool \
      elixir\
+     bat \
+     exa \
      jq
 
 # Install chrome
@@ -35,12 +37,12 @@ sudo dnf -y config-manager --set-enabled google-chrome
 
 # Dotnet packages
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-wget -q https://packages.microsoft.com/config/fedora/27/prod.repo
+wget -q https://packages.microsoft.com/config/fedora/30/prod.repo
 sudo mv prod.repo /etc/yum.repos.d/microsoft-prod.repo
 sudo chown root:root /etc/yum.repos.d/microsoft-prod.repo
 
 sudo dnf -y update
-sudo dnf -y install dotnet-sdk-2.2
+sudo dnf -y install dotnet-sdk-3.0
 
 # Install Mono
 sudo rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
