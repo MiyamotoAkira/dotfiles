@@ -3,13 +3,13 @@
 set -euo pipefail
 
 sudo apt-get update
-sudo apt-get install python-requests
+sudo apt-get -y install python-requests
 sudo apt-get -y upgrade
 
 sudo apt-add-repository --yes ppa:ansible/ansible
 sudo apt update
-sudo apt autoremove
-sudo apt install ansible
+sudo apt autoremove -y
+sudo apt -y install ansible
 
 ansible-playbook ansible/full.yml
 # # Basic packages
