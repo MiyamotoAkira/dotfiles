@@ -5,9 +5,9 @@ set -euo pipefail
 sudo apt-get update
 sudo apt-get -y upgrade
 
-sudo apt install software-properties-common
 sudo apt-add-repository --yes ppa:ansible/ansible
 sudo apt update
+sudo apt autoremove
 sudo apt install ansible
 
 ansible ../ansible/full.yml
