@@ -11,7 +11,7 @@ sudo apt update
 sudo apt autoremove
 sudo apt install ansible
 
-ansible ../ansible/full.yml
+ansible-playbook ../ansible/full.yml
 # # Basic packages
 # sudo apt-get -y install \
 #      zsh \
