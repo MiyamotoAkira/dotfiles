@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-sudo dnf upgrade
+sudo dnf -y upgrade 
 sudo dnf install ansible
 
 ansible ../ansible/full.yml
