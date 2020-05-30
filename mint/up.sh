@@ -3,6 +3,7 @@
 set -euo pipefail
 
 sudo apt-get update
+sudo apt-get install requests
 sudo apt-get -y upgrade
 
 sudo apt-add-repository --yes ppa:ansible/ansible
