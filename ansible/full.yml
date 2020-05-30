@@ -1,0 +1,5 @@
+---
+- name: Full configuration of Linux Machine
+  hosts: localhost
+  roles:
+    - zsh

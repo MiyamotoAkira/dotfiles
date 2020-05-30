@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   mint:
     docker:
-      - image: linuxmintd/mint19.1-amd64
+      - image: linuxmintd/mint19.3-amd64
     steps:
       - checkout
       - run: mint/up.sh

@@ -1,0 +1,5 @@
+- name: Install Zsh
+  become: yes
+  package:
+    name: zsh
+    state: present
