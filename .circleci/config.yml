@@ -7,14 +7,14 @@ jobs:
     steps:
       - checkout
       - run: mint/up.sh
-      - run: ./test.sh
+      # - run: ./test.sh
   fedora:
     docker:
       - image: jorgegueorguiev/fedora-sudo
     steps:
       - checkout
       - run: fedora/up.sh
-      - run: ./test.sh
+      # - run: ./test.sh
 
 workflows:
   version: 2
