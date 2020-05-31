@@ -1,3 +1,9 @@
+- name: Install Curl
+  become: yes
+  package:
+    name: curl
+    state: present
+
 - name: Install Zsh
   become: yes
   package:
