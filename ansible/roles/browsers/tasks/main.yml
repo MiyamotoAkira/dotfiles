@@ -1,5 +1,5 @@
 - name: install Firefox
   become: yes
   package:
-    name: Firefox
+    name: firefox
     state: present
