@@ -3,4 +3,5 @@
   hosts: localhost
   roles:
     - cli
+    - nettools
     - browsers
