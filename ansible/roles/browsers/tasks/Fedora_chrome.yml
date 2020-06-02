@@ -1,0 +1,10 @@
+- name: Install workstation repositories
+  become: yes
+  package:
+    name: fedora-workstation-repositories
+    state: present
+
+- name: Install Chrome
+  become: yes
+  command: dnf -y confi-manager --set-enabled google-chrome
+  
