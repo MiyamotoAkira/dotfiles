@@ -1,3 +1,8 @@
+- name: collect CLI vars
+  include_vars: "{{ item }}"
+  file: '{{ role_path}}/vars/{{ ansible_distribution }}.yml'
+  name: cli_vars
+
 - name: Install Zsh
   become: yes
   package:
@@ -59,3 +64,8 @@
     name: unzip
     state: present
 
+- name: Install Silver Searcher
+  become: yes
+  package:
+    name: {{ cli_vars.silver_searcher_package_name }}
+    state: present
