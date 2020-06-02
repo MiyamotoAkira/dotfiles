@@ -14,13 +14,13 @@
 
 - name: Symbolic link for .zshrc
   file:
-    src: .zshrc
+    src: '{{ role_path }}/files/.zshrc'
     dest: ~/.zshrc
     state: link
 
 - name: Symbolic link for .zshenv
   file:
-    src: .zshenv
+    src: '{{ role_path }}/files/.zshenv'
     dest: ~/.zshenv
     state: link
 
@@ -37,7 +37,7 @@
 
 - name: Symbolic link for my theme
   file:
-    src: akira.zsh-theme
+    src: '{{ role_path }}/files/akira.zsh-theme'
     dest: ~/.oh-my-zsh/themes/akira.zsh-theme
     state: link
 
