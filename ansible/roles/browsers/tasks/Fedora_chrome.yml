@@ -6,5 +6,6 @@
 
 - name: Install Chrome
   become: yes
-  command: dnf -y confi-manager --set-enabled google-chrome
+  command: dnf -y config-manager --set-enabled google-chrome
+  warn: false
   
