@@ -41,3 +41,21 @@
     dest: ~/.oh-my-zsh/themes/akira.zsh-theme
     state: link
 
+- name: Install xclip
+  become: yes
+  package:
+    name: xclip
+    state: present
+
+- name: Install zip
+  become: yes
+  package:
+    name: zip
+    state: present
+
+- name: Install unzip
+  become: yes
+  package:
+    name: unzip
+    state: present
+
