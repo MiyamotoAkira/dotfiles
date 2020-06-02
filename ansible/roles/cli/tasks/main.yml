@@ -20,6 +20,7 @@
 
 - name: Install oh-my-zsh
   become: yes
-  command: oh_my_install.dest
+  command: '{{ oh_my_install.dest }}'
   args:
     creates: "~/.oh-my-zsh/oh-my-zsh.sh"
+
