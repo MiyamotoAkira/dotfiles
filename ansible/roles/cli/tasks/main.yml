@@ -67,5 +67,5 @@
 - name: Install Silver Searcher
   become: yes
   package:
-    name: {{ cli_vars.silver_searcher_package_name }}
+    name: "{{ cli_vars.silver_searcher_package_name }}"
     state: present
