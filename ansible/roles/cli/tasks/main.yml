@@ -12,6 +12,18 @@
     mode: '0700'
   register: oh_my_install
 
+- name: Symbolic link for .zshrc
+  file:
+    src: .zshrc
+    dest: ~/.zshrc
+    state: link
+
+- name: Symbolic link for .zshenv
+  file:
+    src: .zshenv
+    dest: ~/.zshenv
+    state: link
+
 - name: Install oh-my-zsh
   become: yes
   command: '{{ oh_my_install.dest }}'
@@ -22,4 +34,10 @@
   file:
     state: absent
     path: '{{ oh_my_install.dest }}'
+
+- name: Symbolic link for my theme
+  file:
+    src: akira.zsh-theme
+    dest: ~/.oh-my-zsh/themes/akira.zsh-theme
+    state: link
 
