@@ -3,3 +3,9 @@
   package:
     name: curl
     state: present
+
+- name: Install wget
+  become: yes
+  package:
+    name: wget
+    state: present
