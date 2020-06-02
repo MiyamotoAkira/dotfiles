@@ -1,6 +1,6 @@
 - name: collect CLI vars
   include_vars:
-    file: "{{ role_path}}/vars/{{ ansible_distribution }}.yml"
+    file: "{{ role_path }}/vars/{{ ansible_distribution }}.yml"
     name: cli_vars
 
 - name: Install Zsh
