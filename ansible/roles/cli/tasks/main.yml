@@ -10,15 +10,16 @@
     name: zsh
     state: present
 
-- name: Install oh-my-zsh
+- name: Download oh-my-zsh
   become: yes
-  command: curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-  args:
-    creates: "install.sh"
-  register: stat_result
+  get_url:
+    url: https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: ~/install.sh
+    mode: '0700'
+  register: oh_my_install
 
 - name: Install oh-my-zsh
   become: yes
-  command: install.sh
+  command: oh_my_install.dest
   args:
     creates: "~/.oh-my-zsh/oh-my-zsh.sh"
