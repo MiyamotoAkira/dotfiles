@@ -6,6 +6,7 @@
 
 - name: Install Chrome
   become: yes
-  command: dnf -y config-manager --set-enabled google-chrome
-  warn: false
-  
+  command:
+    cmd: dnf -y config-manager --set-enabled google-chrome
+    creates: /usr/bin/google-chrome-stable
+    warn: false
