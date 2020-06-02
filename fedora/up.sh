@@ -3,7 +3,7 @@
 set -euo pipefail
 
 sudo dnf -y upgrade 
-sudo dnf -y install ansible
+sudo dnf -y install ansible git
 
 ansible-playbook ansible/full.yml
 # sudo dnf -y groupinstall "C Development Tools and Libraries"
