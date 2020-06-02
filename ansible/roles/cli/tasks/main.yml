@@ -24,3 +24,8 @@
   args:
     creates: "~/.oh-my-zsh/oh-my-zsh.sh"
 
+- name: Clean oh-my-zsh install
+  file:
+    state: absent
+    path: '{{ oh_my_install.dest }}'
+
