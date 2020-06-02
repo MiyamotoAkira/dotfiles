@@ -4,5 +4,5 @@
     name: firefox
     state: present
 
-- name: Install Chrome
+- name: Install Distribution based Chrome
   include_tasks: "{{ ansible_distribution }}_chrome.yml"
