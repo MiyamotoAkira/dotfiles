@@ -1,7 +1,7 @@
 - name: collect CLI vars
-  include_vars: "{{ item }}"
-  file: '{{ role_path}}/vars/{{ ansible_distribution }}.yml'
-  name: cli_vars
+  include_vars:
+    file: "{{ role_path}}/vars/{{ ansible_distribution }}.yml"
+    name: cli_vars
 
 - name: Install Zsh
   become: yes
@@ -19,30 +19,30 @@
 
 - name: Symbolic link for .zshrc
   file:
-    src: '{{ role_path }}/files/.zshrc'
+    src: "{{ role_path }}/files/.zshrc"
     dest: ~/.zshrc
     state: link
 
 - name: Symbolic link for .zshenv
   file:
-    src: '{{ role_path }}/files/.zshenv'
+    src: "{{ role_path }}/files/.zshenv"
     dest: ~/.zshenv
     state: link
 
 - name: Install oh-my-zsh
   become: yes
-  command: '{{ oh_my_install.dest }}'
+  command: "{{ oh_my_install.dest }}"
   args:
     creates: "~/.oh-my-zsh/oh-my-zsh.sh"
 
 - name: Clean oh-my-zsh install
   file:
     state: absent
-    path: '{{ oh_my_install.dest }}'
+    path: "{{ oh_my_install.dest }}"
 
 - name: Symbolic link for my theme
   file:
-    src: '{{ role_path }}/files/akira.zsh-theme'
+    src: "{{ role_path }}/files/akira.zsh-theme"
     dest: ~/.oh-my-zsh/themes/akira.zsh-theme
     state: link
 
