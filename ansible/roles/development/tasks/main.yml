@@ -1,0 +1,11 @@
+- name : Install Mercurial
+  become: yes
+  package:
+    name: mercurial
+    state: present
+
+- name: Install jq
+  become: yes
+  package:
+    name: jq
+    state: present
