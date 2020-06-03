@@ -13,5 +13,5 @@
 - name: Install core utils
   become: yes
   apt:
-    name: core-utils
+    name: coreutils
     state: present
