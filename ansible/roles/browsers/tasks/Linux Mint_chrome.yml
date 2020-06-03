@@ -11,6 +11,6 @@
 
 - name: Install Chrome
   become: yes
-  package:
+  apt:
     name: google-chrome-stable
     state: present
