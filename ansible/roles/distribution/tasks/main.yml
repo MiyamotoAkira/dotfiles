@@ -1,2 +1,2 @@
 - name: Install special distribution packages needed
-  include_tasks: "{{ ansible_distribution }}_chrome.yml"
+  include_tasks: "{{ ansible_distribution }}_dist_packages.yml"
