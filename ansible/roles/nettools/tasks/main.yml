@@ -1,3 +1,8 @@
+- name: Collect nettools vars
+  include_vars:
+    file: "{{ role_path }}/vars/{{ ansible_distribution }}.yml"
+    name: nettools_vars
+
 - name: Install Curl
   become: yes
   package:
@@ -8,4 +13,10 @@
   become: yes
   package:
     name: wget
+    state: present
+
+- name: Install SSL
+  become: yes
+  package:
+    name: "{{ nettools_vars.open_ssl_package_name }}"
     state: present

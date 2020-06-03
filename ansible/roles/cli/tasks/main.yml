@@ -1,4 +1,4 @@
-- name: collect CLI vars
+- name: Collect CLI vars
   include_vars:
     file: "{{ role_path }}/vars/{{ ansible_distribution }}.yml"
     name: cli_vars
@@ -70,3 +70,11 @@
   package:
     name: "{{ cli_vars.silver_searcher_package_name }}"
     state: present
+
+- name: Install Readline
+  become: yes
+  package:
+    name: "{{ cli_vars.readline_package_name }}"
+    state: present
+
+

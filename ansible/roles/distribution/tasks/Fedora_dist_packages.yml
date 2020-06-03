@@ -3,3 +3,9 @@
   dnf:
     name: dnf-plugins-core
     state: present
+
+- name: Install common utils
+  become: yes
+  dnf:
+    name: util-linux-user
+    state: present

@@ -1,1 +1,4 @@
-silver_searcher_package_name: the_silver_searcher
+- silver_searcher_package_name: the_silver_searcher
+
+- readline_package_name: readline-devel
+

@@ -3,3 +3,15 @@
   apt:
     name: net-tools
     state: present
+
+- name: Install Software Common
+  become: yes
+  apt:
+    name: software-properties-common
+    state: present
+
+- name: Install core utils
+  become: yes
+  apt:
+    name: core-utils
+    state: present
