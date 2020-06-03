@@ -1,0 +1,5 @@
+- name: Install Nettools
+  become: yes
+  apt:
+    name: net-tools
+    state: present

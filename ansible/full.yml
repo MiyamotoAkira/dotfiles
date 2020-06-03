@@ -2,6 +2,7 @@
 - name: Full configuration of Linux Machine
   hosts: localhost
   roles:
+    - distribution
     - cli
     - nettools
     - browsers

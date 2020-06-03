@@ -1,0 +1,5 @@
+- name: Install dnf plugins core
+  become: yes
+  dnf:
+    name: dnf-plugins-core
+    state: present
