@@ -1,0 +1,31 @@
+- name: Download bat
+  get_url:
+    url: https://github.com/sharkdp/bat/releases/download/v0.15.4/bat_0.15.4_amd64.deb
+    dest: ~/bat_01.15.4_amd64.deb
+  register: bat_package
+
+- name: Install bat
+  become: yes
+  apt:
+    deb: "{{ bat_package.dest }}"
+    state: present
+
+- name: Remove bat package
+  become: yes
+  file:
+    path: "{{ bat_package.dest }}"
+    state: absent
+
+- name: Download and Extract Exa
+  unarchive:
+    src: https://github.com/ogham/exa/releases/download/v0.9.0/exa-linux-x86_64-0.9.0.zip
+    dest: ~/bin/
+    remote_src: yes
+  register: exa_location
+
+- name: Symbolic link for exa
+  file:
+    src: "{{ exa_location }}/exa-linux-x86_64"
+    dest: "{{ exa_location }}/exa"
+    state: link
+    

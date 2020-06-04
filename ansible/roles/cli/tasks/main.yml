@@ -77,4 +77,5 @@
     name: "{{ cli_vars.readline_package_name }}"
     state: present
 
-
+- name: Installs distribution dependent tools
+  include_tasks: "{{ ansible_distribution }}_cli_packages.yml"
