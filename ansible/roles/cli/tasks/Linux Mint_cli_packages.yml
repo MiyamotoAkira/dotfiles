@@ -25,7 +25,7 @@
 
 - name: Symbolic link for exa
   file:
-    src: "{{ exa_location }}/exa-linux-x86_64"
-    dest: "{{ exa_location }}/exa"
+    src: "{{ exa_location.dest }}/exa-linux-x86_64"
+    dest: "{{ exa_location.dest }}/exa"
     state: link
     
