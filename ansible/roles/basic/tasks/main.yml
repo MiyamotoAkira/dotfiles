@@ -1,0 +1,24 @@
+- name: Create bin directory
+  file:
+    path: ~/bin
+    state: directory
+
+- name: Create code directory
+  file:
+    path: ~/code
+    state: directory
+
+- name: Create personal directory
+  file:
+    path: ~/code/personal
+    state: directory
+
+- name: Create external directory
+  file:
+    path: ~/code/external
+    state: directory
+
+- name: Create codurance directory
+  file:
+    path: ~/code/codurance
+    state: directory
