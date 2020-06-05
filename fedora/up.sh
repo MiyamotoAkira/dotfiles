@@ -6,38 +6,16 @@ sudo dnf -y upgrade
 sudo dnf -y install ansible git
 
 ansible-playbook ansible/full.yml
-# sudo dnf -y groupinstall "C Development Tools and Libraries"
-# sudo dnf -y groupinstall "Development Tools"
 
 # sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # sudo dnf -y groupupdate core
 # sudo dnf -y --best --allowerasing install \
-#      zsh \
-#      curl \
-#      wget \
-#      util-linux-user \
-#      mercurial \
 #      kdiff3 \
-#      openssl-devel \
-#      readline-devel \
 #      ffmpeg-libs \
-#      dnf-plugins-core \
-#      firefox \
-#      unzip \
-#      zip \
 #      pandoc \
-#      the_silver_searcher \
 #      vim-enhanced \
 #      gnome-tweak-tool \
-#      elixir\
-#      bat \
-#      exa \
-#      jq
-
-# # Install chrome
-# sudo dnf -y install fedora-workstation-repositories
-# sudo dnf -y config-manager --set-enabled google-chrome
 
 # # Dotnet packages
 # sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc

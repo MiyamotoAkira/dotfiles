@@ -14,48 +14,14 @@ sudo apt -y install ansible
 ansible-playbook ansible/full.yml
 # # Basic packages
 # sudo apt-get -y install \
-#      zsh \
-#      curl \
-#      wget \
-#      net-tools \
-#      software-properties-common \
-#      coreutils \
-#      xclip \
-#      libssl-dev \
-#      libreadline-dev \
 #      zlib1g-dev \
-#      mercurial \
 #      kdiff3 \
-#      firefox \
-#      unzip \
-#      zip \
 #      pandoc \
-#      silversearcher-ag \
-#      devscripts \
-#      jq \
 #      apt-transport-https \
 #      ca-certificates \
 #      gnupg \
 #      gnupg-agent \
 #      python-requests
-
-# # Install chrome
-# echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
-# sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-# sudo apt-get -y update
-# sudo apt-get -y install google-chrome-stable
-
-# # Install bat
-# wget -q https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
-# sudo dpkg -i bat_0.12.1_amd64.deb
-# rm bat_0.12.1_amd64.deb
-
-# # Install exa
-# wget -q https://github.com/ogham/exa/releases/download/v0.9.0/exa-linux-x86_64-0.9.0.zip
-# unzip exa-linux-x86_64-0.9.0.zip
-# mkdir ~/bin
-# mv exa-linux-x86_64 ~/bin/exa
-# rm exa-linux-x86_64-0.9.0.zip
 
 # # Dot net packages
 # wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
@@ -72,12 +38,6 @@ ansible-playbook ansible/full.yml
 # echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
 # sudo apt update
 # sudo apt-get -y install mono-complete
-
-# # Elixir
-# # sudo wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
-# # sudo apt-get update
-# # sudo apt-get install esl-erlang
-# # sudo apt-get install elixir
 
 # # preparing for building emacs
 # debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No configuration'"
