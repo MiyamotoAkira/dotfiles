@@ -41,8 +41,12 @@
 
 - name: Enable Universe
   apt_repository:
-    repo: universe
+    repo: "{{ item }}"
     state: present
+  loop:
+      - "deb http://archive.ubuntu.com/ubuntu/ bionic universe"
+      - "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe"
+      - "deb http://security.ubuntu.com/ubuntu/ bionic-security universe"
   when: ansible_distribution == 'Linux Mint'
 
 - name: Add yum dotnet repo
@@ -50,6 +54,7 @@
     name: microsoft-prod
     baseurl: https://packages.microsoft.com/config/fedora/31/prod.repo
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    description: The repo for dotnet
   when: ansible_distribution == 'Fedora'
 
 - name: Install dotnet
