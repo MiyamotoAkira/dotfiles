@@ -20,3 +20,17 @@
   package:
     name: "{{ nettools_vars.open_ssl_package_name }}"
     state: present
+
+- name: Install apt transport
+  become: yes
+  apt:
+    name: apt-transport-https
+    state: present
+  when: ansible_distribution == 'Linux Mint'
+
+- name: Install ca certificates
+  become: yes
+  apt:
+    name: ca-certificates
+    state: present
+  when: ansible_distribution == 'Linux Mint'
