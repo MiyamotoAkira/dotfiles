@@ -52,7 +52,7 @@
 - name: Add yum dotnet repo
   yum_repository:
     name: microsoft-prod
-    baseurl: https://packages.microsoft.com/config/fedora/31/prod.repo
+    baseurl: https://packages.microsoft.com/fedora/31/prod/
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
     gpgcheck: yes
     enabled: yes
