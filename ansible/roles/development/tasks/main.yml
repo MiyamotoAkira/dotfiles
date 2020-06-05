@@ -88,7 +88,7 @@
     mode: a+x
   register: nvm_install
   
-- name: install nvm for node
+- name: Install nvm for node
   become: yes
   command: "{{ nvm_install.dest }}"
   args:
@@ -98,4 +98,21 @@
   file:
     path: "{{ nvm_install.dest }}"
     state: absent
-  
+
+- name: Download Rust
+  get_url:
+    url: https://sh.rustup.rs
+    dest: ~/temp_rust.sh
+    mode: a+x
+  register: rust_install
+
+- name: Install rust for node
+  become: yes
+  command: "{{ rust_install.dest }}" -y
+  args:
+    creates: ~/.rust
+
+- name: Remove rust installer
+  file:
+    path: "{{ rust_install.dest }}"
+    state: absent
