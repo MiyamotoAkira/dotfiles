@@ -63,3 +63,20 @@
   package:
     name: dotnet-sdk-3.1
     state: present
+
+- name: Install lein for Clojure
+  get_url:
+    url: https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+    dest: ~/bin/lein
+    mode: a+x
+
+- name: Create folder for lein
+  file:
+    path: ~/.lein
+    state: directory
+
+- name: Symbolic link for profiles.clj
+  file:
+    src: "{{ role_path }}/files/profiles.clj"
+    dest: ~/.lein/profiles.clj
+    state: link
