@@ -9,3 +9,23 @@
   package:
     name: jq
     state: present
+
+- name: Add deb elixir repo
+  become: yes
+  apt:
+    deb: https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
+    state: present
+  when: ansible_distribution == 'Linux Mint'
+
+- name: Install Erlang
+  become: yes
+  package:
+    name: esl-erlang
+    state: present
+
+- name: Install Elixir
+  become: yes
+  package:
+    name: elixir
+    state: present
+  
