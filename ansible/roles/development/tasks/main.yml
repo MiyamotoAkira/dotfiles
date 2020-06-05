@@ -53,10 +53,8 @@
   yum_repository:
     name: microsoft-prod
     baseurl: https://packages.microsoft.com/config/fedora/31/prod.repo
-    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcakey: https://packages.microsoft.com/keys/microsoft.asc
     description: The repo for dotnet
-    state: present
-    update_cache: yes
   when: ansible_distribution == 'Fedora'
 
 - name: Install dotnet
