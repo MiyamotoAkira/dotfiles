@@ -1,0 +1,9 @@
+- name: Install Group C
+  dnf:
+    name: '@C Development Tools and Libraries'
+    state: present
+
+- name: Install Group Development
+  dnf:
+    name: '@Development Tools'
+    state: present

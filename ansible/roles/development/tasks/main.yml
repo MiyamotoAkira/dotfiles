@@ -1,3 +1,6 @@
+- name: Install basics for Distribution
+  include_tasks: "{{ ansible_distribution }}_development_basics.yml"
+
 - name : Install Mercurial
   become: yes
   package:
@@ -20,8 +23,9 @@
 - name: Install Erlang
   become: yes
   package:
-    name: esl-erlang
+    name: erlang
     state: present
+  when: ansible_distribution == 'Linux Mint'
 
 - name: Install Elixir
   become: yes
