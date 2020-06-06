@@ -135,3 +135,18 @@
     path: "{{ haskell_install.dest }}"
     state: absent
 
+- name: Download rbenv
+  git:
+    repo: https://github.com/rbenv/rbenv.git
+    dest: ~/.rbenv
+  register: rbenv_directory
+
+# - name: Create plugins root
+#   file:
+#     path: "{{ rbenv_directory.dest }}/plugins"
+#     state: directory
+
+- name: Download ruby-build
+  git:
+    repo: https://github.com/rbenv/ruby-build.git
+    dest: "{{ rbenv_directory }}/plugins/ruby-build"
