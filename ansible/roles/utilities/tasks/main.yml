@@ -1,0 +1,8 @@
+- name: Install kdiff3
+  become: yes
+  package:
+    name: kdiff3
+    state: present
+
+- name: Distribution based utilities
+  include_tasks: "{{ ansible_distribution }}_utilities.yml"
