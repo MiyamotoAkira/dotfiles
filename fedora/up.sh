@@ -11,9 +11,7 @@ ansible-playbook ansible/full.yml
 
 # sudo dnf -y groupupdate core
 # sudo dnf -y --best --allowerasing install \
-#      kdiff3 \
 #      ffmpeg-libs \
-#      pandoc \
 #      vim-enhanced \
 #      gnome-tweak-tool \
 
@@ -25,10 +23,6 @@ ansible-playbook ansible/full.yml
 
 # # Preparation for Emacs
 # sudo dnf -y builddep emacs
-
-# # Install dropbox
-# curl -O https://linux.dropbox.com/packages/fedora/nautilus-dropbox-2019.02.14-1.fedora.x86_64.rpm
-# sudo dnf -y install nautilus-dropbox-2019.02.14-1.fedora.x86_64.rpm
 
 # # installing docker
 # # sudo dnf config-manager \

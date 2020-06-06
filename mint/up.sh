@@ -15,10 +15,6 @@ ansible-playbook ansible/full.yml
 # # Basic packages
 # sudo apt-get -y install \
 #      zlib1g-dev \
-#      kdiff3 \
-#      pandoc \
-#      apt-transport-https \
-#      ca-certificates \
 #      gnupg \
 #      gnupg-agent \
 #      python-requests
@@ -33,14 +29,6 @@ ansible-playbook ansible/full.yml
 # debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No configuration'"
 # debconf-set-selections <<< "postfix postfix/mailname string twoormore.eu"
 # sudo apt-get -y build-dep emacs25
-
-# #Install dropbox
-# # curl -O https://linux.dropbox.com/packages/ubuntu/dropbox_2019.02.14_amd64.deb
-# # sudo mk-build-deps -i dropbox_2019.02.14_amd64.deb
-# # sudo apt-get -y install libpango1.0-0
-# # sudo dpkg -i dropbox_2019.02.14_amd64.deb
-# sudo apt-get -y install nautilus-dropbox
-
 
 # # installing docker
 # # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -

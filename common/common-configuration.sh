@@ -1,10 +1,5 @@
 #! /bin/zsh
 
-set -euo pipefail
-
-chsh -s $(which zsh)
-
-
 source $HOME/.cargo/env
 
 set +e
@@ -23,19 +18,15 @@ rustup component add rustfmt --toolchain nightly
 set -e
 
 ~/.rbenv/bin/rbenv init -
-~/.rbenv/bin/rbenv install 2.5.1
-~/.rbenv/bin/rbenv global 2.5.1
+~/.rbenv/bin/rbenv install 2.7.1
+~/.rbenv/bin/rbenv global 2.7.1
 
 # SDKMan
 # curl -s "https://get.sdkman.io" | bash
 # source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Terrafom
-curl -O https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_linux_amd64.zip
-unzip terraform_0.12.0_linux_amd64.zip
-sudo chmod a+x terraform
-mv terraform ~/bin
-rm terraform_0.12.0_linux_amd64.zip
+tfenv install latest
 
 # Emacs
 EMACS_TEMP_FOLDER="~/tmp/emacs"
