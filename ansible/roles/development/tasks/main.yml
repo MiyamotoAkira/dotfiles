@@ -116,3 +116,22 @@
   file:
     path: "{{ rust_install.dest }}"
     state: absent
+
+- name: Download Haskell
+  get_url:
+    url: https://get.haskellstack.org/
+    dest: ~/temp_haskell.sh
+    mode: a+x
+  register: haskell_install
+
+- name: Install Haskell
+  become: yes
+  command: "{{ haskell_install.dest }}"
+  args:
+    creates: /usr/local/bin/haskell
+
+- name: Remove Haskell installer
+  file:
+    path: "{{ haskell_install.dest }}"
+    state: absent
+
