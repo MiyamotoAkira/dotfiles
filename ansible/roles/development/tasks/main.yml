@@ -106,9 +106,9 @@
     mode: a+x
   register: rust_install
 
-- name: Install rust for node
+- name: Install rust
   become: yes
-  command: "{{ rust_install.dest }}" -y
+  command: "{{ rust_install.dest }} -y"
   args:
     creates: ~/.rust
 
