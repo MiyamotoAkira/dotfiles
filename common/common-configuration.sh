@@ -22,11 +22,6 @@ set +e
 rustup component add rustfmt --toolchain nightly
 set -e
 
-# Ruby and Rbenv
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-mkdir -p "$(~/.rbenv/bin/rbenv root)"/plugins
-git clone https://github.com/rbenv/ruby-build.git "$(~/.rbenv/bin/rbenv root)"/plugins/ruby-build
-
 ~/.rbenv/bin/rbenv init -
 ~/.rbenv/bin/rbenv install 2.5.1
 ~/.rbenv/bin/rbenv global 2.5.1
