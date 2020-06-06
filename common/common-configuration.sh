@@ -4,21 +4,6 @@ set -euo pipefail
 
 chsh -s $(which zsh)
 
-mkdir ~/bin/
-
-# Copy git config files
-cp config_files/gitconfig ~/.gitconfig
-cp config_files/gitignoreglobal ~/.gitignoreglobal
-
-mkdir -p ~/code/personal/
-mkdir -p ~/code/codurance/
-
-# Rust
-RUSTUP_TEMP="/tmp/temp_rust.sh"
-curl https://sh.rustup.rs -sSf > "$RUSTUP_TEMP"
-chmod +x "$RUSTUP_TEMP"
-"$RUSTUP_TEMP" -y
-rm -f "$RUSTUP_TEMP"
 
 source $HOME/.cargo/env
 
@@ -36,9 +21,6 @@ rustup component add rustfmt --toolchain stable
 set +e
 rustup component add rustfmt --toolchain nightly
 set -e
-
-# Haskell
-sudo curl -sSL https://get.haskellstack.org/ | sh
 
 # Ruby and Rbenv
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
@@ -60,14 +42,6 @@ sudo chmod a+x terraform
 mv terraform ~/bin
 rm terraform_0.12.0_linux_amd64.zip
 
-# Link
-curl -O https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
-sudo chmod a+x lein
-mv lein ~/bin
-mkdir ~/.lein
-cp config_files/lein_profiles.clj ~/.lein/profiles.clj
-
-
 # Emacs
 EMACS_TEMP_FOLDER="~/tmp/emacs"
 mkdir -p "$EMACS_TEMP_FOLDER"
@@ -86,15 +60,3 @@ tar -xvzf "$EMACS_TEMP" -C "$EMACS_TEMP_FOLDER"
 # cd -
 # Cask
 # curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
-
-# Oh my zsh
-# https://github.com/robbyrussell/oh-my-zsh/issues/5873
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" --unattended
-cp config_files/akira.zsh-theme ~/.oh-my-zsh/themes
-
-#copy zsh config files
-cp config_files/zshenv ~/.zshenv
-cp config_files/zshrc ~/.zshrc
-
-# Add nvm for node installations
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
