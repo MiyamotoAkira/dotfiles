@@ -1,3 +1,4 @@
 - name: Install 
-    git: https://github.com/tfutils/tfenv.git
-    dest: ~/.tfenv
+    git:
+      urL: https://github.com/tfutils/tfenv.git
+      dest: ~/.tfenv
