@@ -1,4 +1,5 @@
 - name: Install Dropbox
+  become: yes
   dnf:
     name: https://linux.dropbox.com/packages/fedora/nautilus-dropbox-2020.03.04-1.fedora.x86_64.rpm
     state: present

@@ -6,3 +6,9 @@
 
 - name: Distribution based utilities
   include_tasks: "{{ ansible_distribution }}_utilities.yml"
+
+- name: Install Pandoc
+  become: yes
+  package:
+    name: pandoc
+    state: present
