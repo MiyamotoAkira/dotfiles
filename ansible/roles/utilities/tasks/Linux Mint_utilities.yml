@@ -3,3 +3,9 @@
   apt:
     deb: https://linux.dropbox.com/packages/ubuntu/dropbox_2020.03.04_amd64.deb
     state: present
+
+- name: Install Slack
+  become: yes
+  apt:
+    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-4.4.3-amd64.deb
+    state: present
