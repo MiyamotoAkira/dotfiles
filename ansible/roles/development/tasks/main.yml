@@ -150,3 +150,19 @@
   git:
     repo: https://github.com/rbenv/ruby-build.git
     dest: "{{ rbenv_directory }}/plugins/ruby-build"
+
+- name: Download sdkman
+  get_url:
+    url: https://get.sdkman.io?rcupdate=false
+    dest: ~/sdkman_install.sh
+    mode: a+x
+  register: sdkman_install
+
+- name: Install Sdkman
+  command: "{{ sdkman_install.dest }}"
+  creates: ~/.sdkman
+
+- name: Remove sdkman installer
+  file:
+    path: "{{ sdkman_install.dest }}"
+    state: absent
