@@ -160,7 +160,8 @@
 
 - name: Install Sdkman
   command: "{{ sdkman_install.dest }}"
-  creates: ~/.sdkman
+  args:
+    creates: ~/.sdkman
 
 - name: Remove sdkman installer
   file:
