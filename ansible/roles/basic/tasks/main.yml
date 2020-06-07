@@ -22,3 +22,9 @@
   file:
     path: ~/code/codurance
     state: directory
+
+- name: Install Which
+  dnf:
+    name: which
+    state: present
+  when: ansible_distribution == 'Fedora'
