@@ -8,7 +8,7 @@
 
 - name: Install AWS cli
   become: yes
-  command: "{{ aws_installer.dest }}/install"
+  command: "{{ aws_installer.dest }}/aws/install"
 
 - name: Add Azure on Fedora
   yum_repository:
