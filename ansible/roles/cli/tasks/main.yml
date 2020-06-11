@@ -1,0 +1,79 @@
+- name: Collect CLI vars
+  include_vars:
+    file: "{{ role_path }}/vars/{{ ansible_distribution }}.yml"
+    name: cli_vars
+
+- name: Install Zsh
+  become: yes
+  package:
+    name: zsh
+    state: present
+
+- name: Download oh-my-zsh
+  get_url:
+    url: https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: ~/install.sh
+    mode: '0700'
+  register: oh_my_install
+
+- name: Symbolic link for .zshrc
+  file:
+    src: "{{ role_path }}/files/.zshrc"
+    dest: ~/.zshrc
+    state: link
+
+- name: Symbolic link for .zshenv
+  file:
+    src: "{{ role_path }}/files/.zshenv"
+    dest: ~/.zshenv
+    state: link
+
+- name: Install oh-my-zsh
+  become: yes
+  command: "{{ oh_my_install.dest }}"
+  args:
+    creates: "~/.oh-my-zsh/oh-my-zsh.sh"
+
+- name: Clean oh-my-zsh install
+  file:
+    state: absent
+    path: "{{ oh_my_install.dest }}"
+
+- name: Symbolic link for my theme
+  file:
+    src: "{{ role_path }}/files/akira.zsh-theme"
+    dest: ~/.oh-my-zsh/themes/akira.zsh-theme
+    state: link
+
+- name: Install xclip
+  become: yes
+  package:
+    name: xclip
+    state: present
+
+- name: Install zip
+  become: yes
+  package:
+    name: zip
+    state: present
+
+- name: Install unzip
+  become: yes
+  package:
+    name: unzip
+    state: present
+
+- name: Install Silver Searcher
+  become: yes
+  package:
+    name: "{{ cli_vars.silver_searcher_package_name }}"
+    state: present
+
+- name: Install Readline
+  become: yes
+  package:
+    name: "{{ cli_vars.readline_package_name }}"
+    state: present
+
+- name: Installs distribution dependent tools
+  include_tasks: "{{ ansible_distribution }}_cli_packages.yml"

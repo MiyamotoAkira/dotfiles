@@ -1,0 +1,11 @@
+- name: Install Dropbox
+  become: yes
+  dnf:
+    name: https://linux.dropbox.com/packages/fedora/nautilus-dropbox-2020.03.04-1.fedora.x86_64.rpm
+    state: present
+
+- name: Install Slack
+  become: yes
+  dnf:
+    name: https://downloads.slack-edge.com/linux_releases/slack-4.4.3-0.1.fc21.x86_64.rpm
+    state: present

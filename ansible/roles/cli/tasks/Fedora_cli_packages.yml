@@ -1,0 +1,11 @@
+- name: Install Bat
+  become: yes
+  package:
+    name: bat
+    state: present
+
+- name: Install Exa
+  become: yes
+  package:
+    name: exa
+    state: present

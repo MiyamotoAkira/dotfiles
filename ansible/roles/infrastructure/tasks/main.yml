@@ -1,0 +1,4 @@
+- name: Install TfEnv
+  git:
+    repo: https://github.com/tfutils/tfenv.git
+    dest: ~/.tfenv

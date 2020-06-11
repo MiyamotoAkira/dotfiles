@@ -1,0 +1,12 @@
+---
+- name: Full configuration of Linux Machine
+  hosts: localhost
+  roles:
+    - basic
+    - distribution
+    - cli
+    - nettools
+    - browsers
+    - development
+    - infrastructure
+    - utilities

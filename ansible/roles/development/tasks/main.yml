@@ -1,0 +1,169 @@
+- name: Install basics for Distribution
+  include_tasks: "{{ ansible_distribution }}_development_basics.yml"
+
+- name : Install Mercurial
+  become: yes
+  package:
+    name: mercurial
+    state: present
+
+- name: Install jq
+  become: yes
+  package:
+    name: jq
+    state: present
+
+- name: Add deb elixir repo
+  become: yes
+  apt:
+    deb: https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
+    state: present
+  when: ansible_distribution == 'Linux Mint'
+
+- name: Install Erlang
+  become: yes
+  package:
+    name: erlang
+    state: present
+  when: ansible_distribution == 'Linux Mint'
+
+- name: Install Elixir
+  become: yes
+  package:
+    name: elixir
+    state: present
+  
+- name: Add deb dotnet repo
+  apt:
+    deb: https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+    state: present
+  when: ansible_distribution == 'Linux Mint'
+
+- name: Enable Universe
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+  loop:
+      - "deb http://archive.ubuntu.com/ubuntu/ bionic universe"
+      - "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe"
+      - "deb http://security.ubuntu.com/ubuntu/ bionic-security universe"
+  when: ansible_distribution == 'Linux Mint'
+
+- name: Add yum dotnet repo
+  yum_repository:
+    name: microsoft-prod
+    baseurl: https://packages.microsoft.com/fedora/31/prod/
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: yes
+    enabled: yes
+    description: The repo for dotnet
+  when: ansible_distribution == 'Fedora'
+
+- name: Install dotnet
+  package:
+    name: dotnet-sdk-3.1
+    state: present
+
+- name: Install lein for Clojure
+  get_url:
+    url: https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+    dest: ~/bin/lein
+    mode: a+x
+
+- name: Create folder for lein
+  file:
+    path: ~/.lein
+    state: directory
+
+- name: Symbolic link for profiles.clj
+  file:
+    src: "{{ role_path }}/files/profiles.clj"
+    dest: ~/.lein/profiles.clj
+    state: link
+
+- name: Download nvm
+  get_url:
+    url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
+    dest: ~/install.sh
+    mode: a+x
+  register: nvm_install
+  
+- name: Install nvm for node
+  become: yes
+  command: "{{ nvm_install.dest }}"
+  args:
+    creates: ~/.nvm
+
+- name: Remove nvm installer
+  file:
+    path: "{{ nvm_install.dest }}"
+    state: absent
+
+- name: Download Rust
+  get_url:
+    url: https://sh.rustup.rs
+    dest: ~/temp_rust.sh
+    mode: a+x
+  register: rust_install
+
+- name: Install rust
+  become: yes
+  command: "{{ rust_install.dest }} -y"
+  args:
+    creates: ~/.rust
+
+- name: Remove rust installer
+  file:
+    path: "{{ rust_install.dest }}"
+    state: absent
+
+- name: Download Haskell
+  get_url:
+    url: https://get.haskellstack.org/
+    dest: ~/temp_haskell.sh
+    mode: a+x
+  register: haskell_install
+
+- name: Install Haskell
+  become: yes
+  command: "{{ haskell_install.dest }}"
+  args:
+    creates: /usr/local/bin/haskell
+
+- name: Remove Haskell installer
+  file:
+    path: "{{ haskell_install.dest }}"
+    state: absent
+
+- name: Download rbenv
+  git:
+    repo: https://github.com/rbenv/rbenv.git
+    dest: ~/.rbenv
+  register: rbenv_directory
+
+# - name: Create plugins root
+#   file:
+#     path: "{{ rbenv_directory.dest }}/plugins"
+#     state: directory
+
+- name: Download ruby-build
+  git:
+    repo: https://github.com/rbenv/ruby-build.git
+    dest: "{{ rbenv_directory }}/plugins/ruby-build"
+
+- name: Download sdkman
+  get_url:
+    url: https://get.sdkman.io?rcupdate=false
+    dest: ~/sdkman_install.sh
+    mode: a+x
+  register: sdkman_install
+
+- name: Install Sdkman
+  command: "{{ sdkman_install.dest }}"
+  args:
+    creates: ~/.sdkman
+
+- name: Remove sdkman installer
+  file:
+    path: "{{ sdkman_install.dest }}"
+    state: absent

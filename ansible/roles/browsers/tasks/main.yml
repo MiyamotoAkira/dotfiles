@@ -1,0 +1,8 @@
+- name: Install Firefox
+  become: yes
+  package:
+    name: firefox
+    state: present
+
+- name: Install Distribution based Chrome
+  include_tasks: "{{ ansible_distribution }}_chrome.yml"

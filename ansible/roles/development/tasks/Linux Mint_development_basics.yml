@@ -1,0 +1,4 @@
+- name: Install devscripts
+  apt:
+    name: devscripts
+    state: present
