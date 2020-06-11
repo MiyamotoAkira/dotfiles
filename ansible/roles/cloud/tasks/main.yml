@@ -16,7 +16,7 @@
     baseurl: https://packages.microsoft.com/yumrepos/azure-cli
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
     gpgcheck: yes
-    enables: yes
+    enabled: yes
     description: The repo for Azure cli
   when: ansible_distribution == 'Fedora'
   
