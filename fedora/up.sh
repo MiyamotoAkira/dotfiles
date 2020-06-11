@@ -33,8 +33,4 @@ ansible-playbook ansible/full.yml
 # # sudo systemctl start docker
 # # sudo systemctl enable docker
 
-# # install slack
-# curl -O https://downloads.slack-edge.com/linux_releases/slack-3.4.2-0.1.fc21.x86_64.rpm
-# sudo dnf -y install slack-3.4.2-0.1.fc21.x86_64.rpm
-
 # "common/common-configuration.sh"
