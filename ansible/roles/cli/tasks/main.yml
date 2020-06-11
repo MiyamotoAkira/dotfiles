@@ -45,6 +45,9 @@
     dest: ~/.oh-my-zsh/themes/akira.zsh-theme
     state: link
 
+- name: Change user shell
+  shell: "chsh -s /bin/zsh {{ user_name }}"
+
 - name: Install xclip
   become: yes
   package:
