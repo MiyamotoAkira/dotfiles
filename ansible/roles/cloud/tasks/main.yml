@@ -1,6 +1,6 @@
 - name: Download AWS cli
   unarchive:
-    url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+    src: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
     dest: ~/tmp
     remote_src: yes
     creates: ~/tmp/aws
