@@ -9,3 +9,14 @@
 - name: Install AWS cli
   become: yes
   command: "{{ aws_installer.dest }}/install"
+
+- name: Add Azure on Fedora
+  yum_repository:
+    name: azure-cli
+    baseurl: https://packages.microsoft.com/yumrepos/azure-cli
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: yes
+    enables: yes
+    description: The repo for Azure cli
+  when: ansible_distribution == 'Fedora'
+  
