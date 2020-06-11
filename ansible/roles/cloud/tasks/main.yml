@@ -10,7 +10,7 @@
   become: yes
   command: "{{ aws_installer.dest }}/aws/install"
 
-- name: Add Azure on Fedora
+- name: Add Azure repo on Fedora
   yum_repository:
     name: azure-cli
     baseurl: https://packages.microsoft.com/yumrepos/azure-cli
@@ -19,4 +19,15 @@
     enabled: yes
     description: The repo for Azure cli
   when: ansible_distribution == 'Fedora'
+
+- name: Add Azure repo on Mint
+  apt_repository:
+    repo: deb https://packages.microsoft.com/repos/azure-cli/ bionic main
+    state: present
+  when: ansible_distribution == 'Linux Mint'
   
+- name: Install Azure
+  become: yes
+  package:
+    name: azure-cli
+    state: present
