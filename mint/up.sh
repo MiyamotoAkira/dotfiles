@@ -42,8 +42,4 @@ ansible-playbook ansible/full.yml
 # # sudo systemctl start docker
 # # sudo systemctl enable docker
 
-# sudo apt-get -y install gconf2 gconf-service libnotify4 gvfs-bin libappindicator1 libsecret-1-0
-# curl -O https://downloads.slack-edge.com/linux_releases/slack-desktop-3.4.2-amd64.deb
-# sudo dpkg -i slack-desktop-3.4.2-amd64.deb
-
 # "common/common-configuration.sh"
