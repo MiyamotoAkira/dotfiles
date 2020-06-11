@@ -28,3 +28,8 @@
     name: which
     state: present
   when: ansible_distribution == 'Fedora'
+
+- name: Create tmp directory
+  file:
+    path: ~/tmp
+    state: directory
