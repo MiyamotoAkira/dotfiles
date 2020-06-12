@@ -33,6 +33,6 @@
 
 - name: Install Screen on Mint
   dnf:
-    deb: https://download.screen.so/screen-desktop_1.2.10-1.x86_64.rpm
+    name: https://download.screen.so/screen-desktop_1.2.10-1.x86_64.rpm
     state: present
   when: ansible_distribution == 'Fedora'
