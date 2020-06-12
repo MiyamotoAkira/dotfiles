@@ -24,3 +24,15 @@
     url: https://github.com/bitwarden/desktop/releases/download/v1.18.0/Bitwarden-1.18.0-x86_64.AppImage
     dest: ~/bin/Bitwarden.AppImage
     mode: a+x
+
+- name: Install Screen on Mint
+  apt:
+    deb: https://download.screen.so/screen-desktop_1.2.10_amd64.deb
+    state: present
+  when: ansible_distribution == 'Linux Mint'
+
+- name: Install Screen on Mint
+  dnf:
+    deb: https://download.screen.so/screen-desktop_1.2.10-1.x86_64.rpm
+    state: present
+  when: ansible_distribution == 'Fedora'
