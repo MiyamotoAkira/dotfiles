@@ -12,3 +12,15 @@
   package:
     name: pandoc
     state: present
+
+- name: Install OBS
+  become: yes
+  package:
+    name: obs-studio
+    state: present
+
+- name: Download Bitwarden
+  get_url:
+    url: https://github.com/bitwarden/desktop/releases/download/v1.18.0/Bitwarden-1.18.0-x86_64.AppImage
+    dest: ~/bin/Bitwarden.AppImage
+    mode: a+x
