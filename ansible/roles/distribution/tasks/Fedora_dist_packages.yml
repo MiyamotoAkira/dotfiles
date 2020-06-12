@@ -9,3 +9,13 @@
   dnf:
     name: util-linux-user
     state: present
+
+- name: Get Fedora version
+  shell: rpm -E %fedora
+  register: fedora_version
+  
+- name: Install RPM Fusion
+  become: yes
+  dnf:
+    name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version.stdout }}.noarch.rpm"
+    state: present
