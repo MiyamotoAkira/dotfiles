@@ -36,3 +36,15 @@
     name: https://download.screen.so/desktop-app/linux/1.2.10/screen-desktop-1.2.10-1.x86_64.rpm
     state: present
   when: ansible_distribution == 'Fedora'
+
+- name: Download OpenShot
+  get_url:
+    url: https://github.com/OpenShot/openshot-qt/releases/download/v2.5.1/OpenShot-v2.5.1-x86_64.AppImage
+    dest: ~/bin/OpenShot-v2.5.1-x86_64.AppImage
+    mode: a+x
+
+- name: Download Zulip
+  get_url:
+    url: https://github.com/zulip/zulip-desktop/releases/download/v5.2.0/Zulip-5.2.0-x86_64.AppImage
+    dest: ~/bin/Zulip-5.2.0-x86_64.AppImage
+    mode: a+x
