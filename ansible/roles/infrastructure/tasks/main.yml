@@ -2,3 +2,28 @@
   git:
     repo: https://github.com/tfutils/tfenv.git
     dest: ~/.tfenv
+
+- name: Download terragrunt
+  get_url:
+    url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.23.26/terragrunt_linux_amd64
+    dest: ~/bin/terragrunt
+    mode: a+x
+
+- name: Download CircleCI cli installer
+  get_url:
+    url: https://raw.githubusercontent.com/CircleCI-Public/circleci-cli/master/install.sh
+    dest: ~/circle_install.sh
+    mode: a+x
+  register: circle_install
+
+- name: Install CircleCI cli
+  command: "DESTDIR=~/bin {{ circle_install.dest }}"
+  args:
+    creates: ~/bin/circleci
+
+- name: Remove CircleCI cli installer
+  file:
+    path: "{{ circle_install.dest }}"
+    state: absent
+    
+    

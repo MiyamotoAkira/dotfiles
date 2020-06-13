@@ -167,3 +167,11 @@
   file:
     path: "{{ sdkman_install.dest }}"
     state: absent
+
+- name: Download exercism
+  unarchive:
+    src: https://github.com/exercism/cli/releases/download/v3.0.13/exercism-linux-64bit.tgz
+    dest: ~/bin/
+    remote_src: yes
+    creates: ~/bin/exercism
+    mode: a+x    
