@@ -17,7 +17,7 @@
   register: circle_install
 
 - name: Install CircleCI cli
-  shell: "DESTDIR=/home/{{ user_name.stdout }}/bin {{ circle_install.dest }}"
+  shell: "DESTDIR=~/bin {{ circle_install.dest }}"
   args:
     creates: ~/bin/circleci
 
