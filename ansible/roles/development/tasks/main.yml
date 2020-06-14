@@ -177,9 +177,11 @@
     mode: a+x
 
 - name: Install Insomnia
+  become: yes
   snap:
     name: insomnia
 
 - name: Install Postman
+  become: yes
   snap:
     name: postman

@@ -28,5 +28,6 @@
     
     
 - name: Install Digital Ocean
+  become: yes
   snap:
     name: doctl
