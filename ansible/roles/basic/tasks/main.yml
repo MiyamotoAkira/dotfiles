@@ -37,3 +37,8 @@
 - name: Get name of user
   command: whoami
   register: user_name
+
+- name: Install Snap
+  package:
+    name: snapd
+    state: present
