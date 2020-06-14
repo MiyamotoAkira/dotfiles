@@ -48,3 +48,13 @@
     url: https://github.com/zulip/zulip-desktop/releases/download/v5.2.0/Zulip-5.2.0-x86_64.AppImage
     dest: ~/bin/Zulip-5.2.0-x86_64.AppImage
     mode: a+x
+
+- name: Install Audacity repo on Mint
+  apt_repository:
+    repo: ppa:ubuntuhandbook1/audacity
+  when: ansible_distribution == 'Linux Mint'
+
+- name: Install Audacity
+  package:
+    name: audacity
+    state: present

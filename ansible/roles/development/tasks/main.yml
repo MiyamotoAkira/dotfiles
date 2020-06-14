@@ -174,4 +174,12 @@
     dest: ~/bin/
     remote_src: yes
     creates: ~/bin/exercism
-    mode: a+x    
+    mode: a+x
+
+- name: Install Insomnia
+  snap:
+    name: insomnia
+
+- name: Install Postman
+  snap:
+    name: postman

@@ -27,3 +27,6 @@
     state: absent
     
     
+- name: Install Digital Ocean
+  snap:
+    name: doctl
