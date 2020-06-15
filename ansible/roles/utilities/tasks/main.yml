@@ -49,12 +49,12 @@
     dest: ~/bin/Zulip-5.2.0-x86_64.AppImage
     mode: a+x
 
-- name: Install Audacity repo on Mint
-  apt_repository:
-    repo: deb http://ppa.launchpad.net/ubuntuhandbook1/audacity/ubuntu bionic main
-  when: ansible_distribution == 'Linux Mint'
+# - name: Install Audacity repo on Mint
+#   apt_repository:
+#     repo: deb http://ppa.launchpad.net/ubuntuhandbook1/audacity/ubuntu bionic main
+#   when: ansible_distribution == 'Linux Mint'
 
-- name: Install Audacity
-  package:
-    name: audacity
-    state: present
+# - name: Install Audacity
+#   package:
+#     name: audacity
+#     state: present
