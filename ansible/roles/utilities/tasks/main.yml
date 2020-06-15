@@ -51,7 +51,7 @@
 
 - name: Install Audacity repo on Mint
   apt_repository:
-    repo: deb ppa:ubuntuhandbook1/audacity bionic main
+    repo: deb http://ppa.launchpad.net/ubuntuhandbook1/audacity/ubuntu bionic main
   when: ansible_distribution == 'Linux Mint'
 
 - name: Install Audacity
