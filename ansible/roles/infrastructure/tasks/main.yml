@@ -25,9 +25,3 @@
   file:
     path: "{{ circle_install.dest }}"
     state: absent
-    
-    
-- name: Install Digital Ocean
-  become: yes
-  snap:
-    name: doctl

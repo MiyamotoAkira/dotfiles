@@ -175,13 +175,3 @@
     remote_src: yes
     creates: ~/bin/exercism
     mode: a+x
-
-- name: Install Insomnia
-  become: yes
-  command: snap install insomnia
-  
-
-- name: Install Postman
-  become: yes
-  snap:
-    name: postman
