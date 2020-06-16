@@ -175,3 +175,26 @@
     remote_src: yes
     creates: ~/bin/exercism
     mode: a+x
+
+- name: Install php
+  package:
+    name: php
+    state: present
+
+- name: Install php-cli
+  package:
+    name: php-cli
+    state: present
+
+- name: Install php-bz2
+  package:
+    name: php-bz2
+    state: present
+
+- name: download composer
+  tags:
+    - composer
+  get_url:
+    url: https://getcomposer.org/download/1.10.1/composer.phar
+    dest: ~/bin/composer
+    mode: a+x
