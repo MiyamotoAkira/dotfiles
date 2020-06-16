@@ -10,6 +10,12 @@
   become: yes
   command: "{{ aws_installer.dest }}/aws/install"
 
+- name: Install AWS Vault
+  get_url:
+    url: https://github.com/99designs/aws-vault/releases/download/v5.4.4/aws-vault-linux-amd64
+    dest: ~/bin/aws-vault
+    mode: a+x
+    
 - name: Add Azure repo on Fedora
   yum_repository:
     name: azure-cli
