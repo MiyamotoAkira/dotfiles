@@ -84,7 +84,7 @@
 - name: Download nvm
   get_url:
     url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
-    dest: ~/install.sh
+    dest: "{{ tmp_directory.path }}/install.sh"
     mode: a+x
   register: nvm_install
   
@@ -102,7 +102,7 @@
 - name: Download Rust
   get_url:
     url: https://sh.rustup.rs
-    dest: ~/temp_rust.sh
+    dest: "{{ tmp_directory.path }}/temp_rust.sh"
     mode: a+x
   register: rust_install
 
@@ -120,7 +120,7 @@
 - name: Download Haskell
   get_url:
     url: https://get.haskellstack.org/
-    dest: ~/temp_haskell.sh
+    dest: "{{ tmp_directory.path }}/temp_haskell.sh"
     mode: a+x
   register: haskell_install
 
@@ -141,11 +141,6 @@
     dest: ~/.rbenv
   register: rbenv_directory
 
-# - name: Create plugins root
-#   file:
-#     path: "{{ rbenv_directory.dest }}/plugins"
-#     state: directory
-
 - name: Download ruby-build
   git:
     repo: https://github.com/rbenv/ruby-build.git
@@ -159,7 +154,7 @@
 - name: Download sdkman
   get_url:
     url: https://get.sdkman.io?rcupdate=false
-    dest: ~/sdkman_install.sh
+    dest: "{{ tmp_directory.path }}/sdkman_install.sh"
     mode: a+x
   register: sdkman_install
 

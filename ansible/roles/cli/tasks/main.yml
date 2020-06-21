@@ -12,7 +12,7 @@
 - name: Download oh-my-zsh
   get_url:
     url: https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-    dest: ~/install.sh
+    dest: "{{ tmp_directory.path }}/install.sh"
     mode: '0700'
   register: oh_my_install
 

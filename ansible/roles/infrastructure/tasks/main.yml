@@ -12,7 +12,7 @@
 - name: Download CircleCI cli installer
   get_url:
     url: https://raw.githubusercontent.com/CircleCI-Public/circleci-cli/master/install.sh
-    dest: ~/circle_install.sh
+    dest: "{{ tmp_directory.path }}/circle_install.sh"
     mode: a+x
   register: circle_install
 

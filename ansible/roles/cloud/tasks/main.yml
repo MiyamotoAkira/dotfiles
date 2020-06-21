@@ -1,9 +1,9 @@
 - name: Download AWS cli
   unarchive:
     src: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-    dest: ~/tmp
+    dest: "{{ tmp_directory.path }}"
     remote_src: yes
-    creates: ~/tmp/aws
+    creates: "{{ tmp_directory.path }}/aws"
   register: aws_installer
 
 - name: Install AWS cli

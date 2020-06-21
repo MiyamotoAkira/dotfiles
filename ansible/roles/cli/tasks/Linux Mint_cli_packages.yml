@@ -1,7 +1,7 @@
 - name: Download bat
   get_url:
     url: https://github.com/sharkdp/bat/releases/download/v0.15.4/bat_0.15.4_amd64.deb
-    dest: ~/bat_01.15.4_amd64.deb
+    dest: "{{ tmp_directory.path }}/bat_01.15.4_amd64.deb"
   register: bat_package
 
 - name: Install bat
