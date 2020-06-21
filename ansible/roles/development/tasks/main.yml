@@ -198,3 +198,11 @@
     url: https://getcomposer.org/download/1.10.1/composer.phar
     dest: "{{ bin_directory.path }}/composer"
     mode: a+x
+
+- name: download phpbrew
+  tags:
+    - phpbrew
+  get_url:
+    url: https://github.com/phpbrew/phpbrew/releases/latest/download/phpbrew.phar
+    dest: "{{ bin_directory.path }}/phpbrew"
+    mode: a+x
