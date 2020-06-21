@@ -22,7 +22,7 @@
 - name: Download Bitwarden
   get_url:
     url: https://github.com/bitwarden/desktop/releases/download/v1.18.0/Bitwarden-1.18.0-x86_64.AppImage
-    dest: ~/bin/Bitwarden.AppImage
+    dest: "{{ bin_directory }}/Bitwarden.AppImage"
     mode: a+x
 
 - name: Install Screen on Mint
@@ -40,13 +40,13 @@
 - name: Download OpenShot
   get_url:
     url: https://github.com/OpenShot/openshot-qt/releases/download/v2.5.1/OpenShot-v2.5.1-x86_64.AppImage
-    dest: ~/bin/OpenShot-v2.5.1-x86_64.AppImage
+    dest: "{{ bin_directory }}/OpenShot-v2.5.1-x86_64.AppImage"
     mode: a+x
 
 - name: Download Zulip
   get_url:
     url: https://github.com/zulip/zulip-desktop/releases/download/v5.2.0/Zulip-5.2.0-x86_64.AppImage
-    dest: ~/bin/Zulip-5.2.0-x86_64.AppImage
+    dest: "{{ bin_directory }}/Zulip-5.2.0-x86_64.AppImage"
     mode: a+x
 
 # - name: Install Audacity repo on Mint

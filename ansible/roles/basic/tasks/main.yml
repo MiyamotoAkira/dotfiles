@@ -2,25 +2,27 @@
   file:
     path: ~/bin
     state: directory
+  register: bin_directory
 
 - name: Create code directory
   file:
     path: ~/code
     state: directory
+  register: code_directory
 
 - name: Create personal directory
   file:
-    path: ~/code/personal
+    path: "{{ code_directory }}/personal"
     state: directory
 
 - name: Create external directory
   file:
-    path: ~/code/external
+    path: "{{ code_directory }}/external"
     state: directory
 
 - name: Create codurance directory
   file:
-    path: ~/code/codurance
+    path: "{{ code_directory }}/codurance"
     state: directory
 
 - name: Install Which
@@ -33,6 +35,7 @@
   file:
     path: ~/tmp
     state: directory
+  register: tmp_directory
 
 - name: Get name of user
   command: whoami
