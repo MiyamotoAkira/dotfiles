@@ -1,10 +1,12 @@
-- name: Add deb dotnet repo
+- name: Add deb vscode repo
+  become: yes
   apt_repository:
     repo: deb https://packages.microsoft.com/repos/vscode stable main
     state: present
   when: ansible_distribution == 'Linux Mint'
 
-- name: Add yum dotnet repo
+- name: Add yum vscode repo
+  become: yes
   yum_repository:
     name: vscode
     baseurl: https://packages.microsoft.com/yumrepos/vscode
@@ -14,7 +16,8 @@
     description: The repo for visual studio code
   when: ansible_distribution == 'Fedora'
 
-- name: Install dotnet
+- name: Install vscode
+  become: yes
   package:
     name: code
     state: present

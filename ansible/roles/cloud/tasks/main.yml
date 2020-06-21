@@ -17,6 +17,7 @@
     mode: a+x
     
 - name: Add Azure repo on Fedora
+  become: yes
   yum_repository:
     name: azure-cli
     baseurl: https://packages.microsoft.com/yumrepos/azure-cli
@@ -27,6 +28,7 @@
   when: ansible_distribution == 'Fedora'
 
 - name: Add Azure repo on Mint
+  become: yes
   apt_repository:
     repo: deb https://packages.microsoft.com/repos/azure-cli/ bionic main
     state: present

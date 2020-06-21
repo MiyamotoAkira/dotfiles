@@ -1,0 +1,17 @@
+- name: Download Rust
+  get_url:
+    url: https://sh.rustup.rs
+    dest: "{{ tmp_directory.path }}/temp_rust.sh"
+    mode: a+x
+  register: rust_install
+
+- name: Install rust
+  become: yes
+  command: "{{ rust_install.dest }} -y"
+  args:
+    creates: ~/.rust
+
+- name: Remove rust installer
+  file:
+    path: "{{ rust_install.dest }}"
+    state: absent
