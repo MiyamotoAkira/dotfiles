@@ -13,7 +13,7 @@
 - name: Install AWS Vault
   get_url:
     url: https://github.com/99designs/aws-vault/releases/download/v5.4.4/aws-vault-linux-amd64
-    dest: "{{ bin_directory.dest }}/aws-vault"
+    dest: "{{ bin_directory }}/aws-vault"
     mode: a+x
     
 - name: Add Azure repo on Fedora

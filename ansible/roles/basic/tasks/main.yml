@@ -17,12 +17,12 @@
 
 - name: Create external directory
   file:
-    path: "{{ code_directory.dest }}/external"
+    path: "{{ code_directory }}/external"
     state: directory
 
 - name: Create codurance directory
   file:
-    path: "{{ code_directory.dest }}/codurance"
+    path: "{{ code_directory }}/codurance"
     state: directory
 
 - name: Install Which
