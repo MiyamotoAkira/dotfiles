@@ -12,7 +12,7 @@
 
 - name: Create personal directory
   file:
-    path: "{{ code_directory.dest }}/personal"
+    path: "{{ code_directory }}/personal"
     state: directory
 
 - name: Create external directory
