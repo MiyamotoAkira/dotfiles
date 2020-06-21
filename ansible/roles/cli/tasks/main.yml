@@ -22,7 +22,7 @@
     state: link
 
 - name: check if oh-my-zsh is downloaded
-  state:
+  stat:
     path: ~/.oh-my-zsh
   register: omz_installation
 
