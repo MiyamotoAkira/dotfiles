@@ -9,7 +9,7 @@ sudo apt-get -y upgrade
 sudo apt-add-repository --yes ppa:ansible/ansible
 sudo apt update
 sudo apt autoremove -y
-sudo apt -y install ansible
+sudo apt install ansible -y
 
 ansible-playbook ansible/full.yml
 # # Basic packages
