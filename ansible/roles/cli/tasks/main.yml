@@ -80,3 +80,9 @@
 
 - name: Installs distribution dependent tools
   include_tasks: "{{ ansible_distribution }}_cli_packages.yml"
+
+- name: Install direnv
+  become: yes
+  package:
+    name: direnv
+    state: present

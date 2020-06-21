@@ -151,6 +151,12 @@
     repo: https://github.com/rbenv/ruby-build.git
     dest: "{{ rbenv_directory }}/plugins/ruby-build"
 
+- name: Download rbenv-update
+  git:
+    repo: https://github.com/rkh/rbenv-update.git "$(rbenv root)/plugins/rbenv-update"
+    dest: "{{ rbenv_directory }}/plugins/ruby-build"
+
+
 - name: Download sdkman
   get_url:
     url: https://get.sdkman.io?rcupdate=false

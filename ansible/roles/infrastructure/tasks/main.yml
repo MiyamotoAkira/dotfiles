@@ -25,3 +25,12 @@
   file:
     path: "{{ circle_install.dest }}"
     state: absent
+
+- name: Install fly for Concourse
+  unarchive:
+    src: https://github.com/concourse/concourse/releases/download/v6.3.0/fly-6.3.0-linux-amd64.tgz
+    dest: ~/bin/
+    remote_src: yes
+    creates: ~/bin/fly
+    mode: a+x
+
