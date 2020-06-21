@@ -67,7 +67,7 @@
 - name: Install lein for Clojure
   get_url:
     url: https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
-    dest: "{{ bin_directory }}/lein"
+    dest: "{{ bin_directory.dest }}/lein"
     mode: a+x
 
 - name: Create folder for lein
@@ -177,9 +177,9 @@
 - name: Download exercism
   unarchive:
     src: https://github.com/exercism/cli/releases/download/v3.0.13/exercism-linux-64bit.tgz
-    dest: "{{ bin_directory }}"
+    dest: "{{ bin_directory.dest }}"
     remote_src: yes
-    creates: "{{ bin_directory }}/exercism"
+    creates: "{{ bin_directory.dest }}/exercism"
     mode: a+x
 
 - name: Install php
@@ -202,5 +202,5 @@
     - composer
   get_url:
     url: https://getcomposer.org/download/1.10.1/composer.phar
-    dest: "{{ bin_directory }}/composer"
+    dest: "{{ bin_directory.dest }}/composer"
     mode: a+x

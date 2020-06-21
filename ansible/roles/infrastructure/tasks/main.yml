@@ -6,7 +6,7 @@
 - name: Download terragrunt
   get_url:
     url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.23.26/terragrunt_linux_amd64
-    dest: "{{ bin_directory }}/terragrunt"
+    dest: "{{ bin_directory.dest }}/terragrunt"
     mode: a+x
 
 - name: Download CircleCI cli installer
@@ -17,9 +17,9 @@
   register: circle_install
 
 - name: Install CircleCI cli
-  shell: "DESTDIR={{ bin_directory }} {{ circle_install.dest }}"
+  shell: "DESTDIR={{ bin_directory.dest }} {{ circle_install.dest }}"
   args:
-    creates: "{{ bin_directory }}/circleci"
+    creates: "{{ bin_directory.dest }}/circleci"
 
 - name: Remove CircleCI cli installer
   file:
@@ -29,8 +29,8 @@
 - name: Install fly for Concourse
   unarchive:
     src: https://github.com/concourse/concourse/releases/download/v6.3.0/fly-6.3.0-linux-amd64.tgz
-    dest: "{{ bin_directory }}"
+    dest: "{{ bin_directory.dest }}"
     remote_src: yes
-    creates: "{{ bin_directory }}/fly"
+    creates: "{{ bin_directory.dest }}/fly"
     mode: a+x
 
