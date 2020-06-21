@@ -1,0 +1,17 @@
+- name: Download oh-my-zsh
+  get_url:
+    url: https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: "{{ tmp_directory.path }}/install.sh"
+    mode: '0700'
+  register: oh_my_install
+
+- name: Install oh-my-zsh
+  become: yes
+  command: "{{ oh_my_install.dest }}"
+  args:
+    creates: "~/.oh-my-zsh/oh-my-zsh.sh"
+
+- name: Clean oh-my-zsh install
+  file:
+    state: absent
+    path: "{{ oh_my_install.dest }}"
