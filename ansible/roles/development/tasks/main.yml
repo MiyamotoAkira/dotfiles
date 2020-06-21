@@ -34,12 +34,14 @@
     state: present
   
 - name: Add deb dotnet repo
+  become: yes
   apt:
     deb: https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
     state: present
   when: ansible_distribution == 'Linux Mint'
 
 - name: Enable Universe
+  become: yes
   apt_repository:
     repo: "{{ item }}"
     state: present
@@ -50,6 +52,7 @@
   when: ansible_distribution == 'Linux Mint'
 
 - name: Add yum dotnet repo
+  become: yes
   yum_repository:
     name: microsoft-prod
     baseurl: https://packages.microsoft.com/fedora/31/prod/
@@ -60,6 +63,7 @@
   when: ansible_distribution == 'Fedora'
 
 - name: Install dotnet
+  become: yes
   package:
     name: dotnet-sdk-3.1
     state: present
@@ -177,16 +181,19 @@
     mode: a+x
 
 - name: Install php
+  become: yes
   package:
     name: php
     state: present
 
 - name: Install php-cli
+  become: yes
   package:
     name: php-cli
     state: present
 
 - name: Install php-bz2
+  become: yes
   package:
     name: php-bz2
     state: present

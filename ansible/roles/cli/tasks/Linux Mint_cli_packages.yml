@@ -22,11 +22,10 @@
     dest: "{{ bin_directory.path }}"
     remote_src: yes
     creates: "{{ bin_directory.path }}/exa-linux-x86_64"
-  register: exa_location
 
 - name: Symbolic link for exa
   file:
-    src: "{{ exa_location.dest }}/exa-linux-x86_64"
-    dest: "{{ exa_location.dest }}/exa"
+    src: "{{ bin_directory.path }}/exa-linux-x86_64"
+    dest: "{{ bin_directory.path }}/exa"
     state: link
     

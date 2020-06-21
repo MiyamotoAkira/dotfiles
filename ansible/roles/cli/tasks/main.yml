@@ -37,6 +37,7 @@
     state: link
 
 - name: Change user shell
+  become: yes
   shell: "chsh -s /bin/zsh {{ user_name.stdout }}"
 
 - name: Install xclip

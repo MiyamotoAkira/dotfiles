@@ -26,6 +26,7 @@
     state: directory
 
 - name: Install Which
+  become: yes
   dnf:
     name: which
     state: present
@@ -42,6 +43,7 @@
   register: user_name
 
 - name: Install Snap
+  become: yes
   package:
     name: snapd
     state: present
