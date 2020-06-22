@@ -17,3 +17,7 @@ export PROJECT_HOME="$HOME/code"
 
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
 export SDKMAN_DIR="/home/akira/.sdkman"
+
+export ANDROID_SDK="$HOME/Library/Android/sdk"
+export ANDROID_HOME="$ANDROID_SDK"
+export PATH="$ANDROID_SDK/tools:$ANDROID_SDK/tools/bin:$ANDROID_SDK/platform-tools:$PATH"
