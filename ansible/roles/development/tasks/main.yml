@@ -145,6 +145,14 @@
     repo: https://github.com/pyenv/pyenv-virtualenvwrapper.git
     dest: "{{ pyenv_directory }}/plugins/pyenv-virtualenvwrapper"
 
+- name: Install virtualenv
+  pip:
+    name: virtualenv
+
+- name: Install virtualenvwrapper
+  pip:
+    name: virtualenvwrapper
+
 - name: Download sdkman
   get_url:
     url: https://get.sdkman.io?rcupdate=false
