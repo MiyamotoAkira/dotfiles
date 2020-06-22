@@ -129,6 +129,22 @@
     repo: https://github.com/rkh/rbenv-update.git
     dest: "{{ rbenv_directory }}/plugins/rbenv-update"
 
+- name: Download pyenv
+  git:
+    repo: https://github.com/pyenv/pyenv.git
+    dest: ~/.pyenv
+  register: pyenv_directory
+
+- name: Download pyenv-virtualenv
+  git:
+    repo: https://github.com/pyenv/pyenv-virtualenv.git
+    dest: "{{ pyenv_directory }}/plugins/pyenv-virtualenv"
+
+- name: Download pyenv-virtualenvwrapper
+  git:
+    repo: https://github.com/pyenv/pyenv-virtualenvwrapper.git
+    dest: "{{ pyenv_directory }}/plugins/pyenv-virtualenvwrapper"
+
 - name: Download sdkman
   get_url:
     url: https://get.sdkman.io?rcupdate=false

@@ -7,6 +7,8 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.cask/bin:$PATH"
 export PATH="$HOME/code/externals/tfenv/bin/:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 export WORKON_HOME="$HOME/code/pythonenvs"
