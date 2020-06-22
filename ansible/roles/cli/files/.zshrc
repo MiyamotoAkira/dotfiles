@@ -11,9 +11,11 @@ source $ZSH/oh-my-zsh.sh
 
 # ruby
 eval "$(rbenv init -)"
-
 # python
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 source /usr/local/bin/virtualenvwrapper.sh
+eval "$(pyenv virtualenvwrapper)"
 
 # To disable bracketed paste on emacs
 if [[ $TERM = dumb ]]; then

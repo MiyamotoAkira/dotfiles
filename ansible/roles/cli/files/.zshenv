@@ -11,6 +11,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 export WORKON_HOME="$HOME/code/pythonenvs"
 export PROJECT_HOME="$HOME/code"
 
