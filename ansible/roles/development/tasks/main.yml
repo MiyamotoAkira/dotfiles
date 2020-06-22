@@ -24,7 +24,7 @@
 - name: Install Erlang
   become: yes
   package:
-    name: esl-erlang
+    name: erlang
     state: present
   when: ansible_distribution == 'Linux Mint'
 
