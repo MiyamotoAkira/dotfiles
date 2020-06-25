@@ -145,10 +145,12 @@
     dest: ~/.pyenv/plugins/pyenv-virtualenvwrapper
 
 - name: Install virtualenv
+  become: yes
   pip:
     name: virtualenv
 
 - name: Install virtualenvwrapper
+  become: yes
   pip:
     name: virtualenvwrapper
 
