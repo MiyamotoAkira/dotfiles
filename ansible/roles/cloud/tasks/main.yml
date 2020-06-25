@@ -30,7 +30,7 @@
 - name: Add Azure repo on Mint
   become: yes
   apt_repository:
-    repo: deb https://packages.microsoft.com/repos/azure-cli/ bionic main
+    repo: deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ bionic main
     state: present
   when: ansible_distribution == 'Linux Mint'
   
