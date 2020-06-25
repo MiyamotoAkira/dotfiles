@@ -38,7 +38,7 @@
 
 - name: Change user shell
   become: yes
-  shell: "chsh -s /bin/zsh {{ ansible_user_name }}"
+  shell: "chsh -s /bin/zsh {{ ansible_user_id }}"
   when: ansible_user_shell != "/bin/zsh"
 
 - name: Install xclip
