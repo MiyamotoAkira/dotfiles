@@ -40,16 +40,16 @@
     state: present
   when: ansible_distribution == 'Linux Mint'
 
-- name: Enable Universe
-  become: yes
-  apt_repository:
-    repo: "{{ item }}"
-    state: present
-  loop:
-      - "deb http://archive.ubuntu.com/ubuntu/ bionic universe"
-      - "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe"
-      - "deb http://security.ubuntu.com/ubuntu/ bionic-security universe"
-  when: ansible_distribution == 'Linux Mint'
+# - name: Enable Universe
+#   become: yes
+#   apt_repository:
+#     repo: "{{ item }}"
+#     state: present
+#   loop:
+#       - "deb http://archive.ubuntu.com/ubuntu/ bionic universe"
+#       - "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe"
+#       - "deb http://security.ubuntu.com/ubuntu/ bionic-security universe"
+#   when: ansible_distribution == 'Linux Mint'
 
 - name: Add yum dotnet repo
   become: yes
