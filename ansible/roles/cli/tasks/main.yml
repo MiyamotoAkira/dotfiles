@@ -28,7 +28,7 @@
 
 - name: Install Oh My Zshenv
   include_tasks: oh-my-zsh.yaml
-  when: omz_installation.stat.exists == False
+  when: not omz_installation.stat.exists
 
 - name: Symbolic link for my theme
   file:

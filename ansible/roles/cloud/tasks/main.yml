@@ -16,7 +16,7 @@
     url: https://github.com/99designs/aws-vault/releases/download/v5.4.4/aws-vault-linux-amd64
     dest: "{{ bin_directory.path }}/aws-vault"
     mode: a+x
-    
+
 - name: Add Azure repo on Fedora
   become: yes
   yum_repository:
@@ -34,7 +34,7 @@
     repo: deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ bionic main
     state: present
   when: ansible_distribution == 'Linux Mint'
-  
+
 - name: Install Azure
   become: yes
   package:

@@ -35,4 +35,3 @@
     src: "{{ bin_directory.path }}/exa-linux-x86_64"
     dest: "{{ bin_directory.path }}/exa"
     state: link
-    

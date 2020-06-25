@@ -32,7 +32,7 @@
   package:
     name: elixir
     state: present
-  
+
 - name: Add deb dotnet repo
   become: yes
   apt:
@@ -92,7 +92,7 @@
 
 - name: Install nvm
   include_tasks: nvm.yaml
-  when: nvm_installation.stat.exists == False
+  when: not nvm_installation.stat.exists
 
 - name: Check if Rust is installed
   stat:
@@ -101,7 +101,7 @@
 
 - name: Install Rust
   include_tasks: rust.yaml
-  when: rust_installation.stat.exists == False
+  when: not rust_installation.stat.exists
 
 - name: Check if Stack Haskell is present
   stat:
@@ -110,7 +110,7 @@
 
 - name: Install Stack Haskell
   include_tasks: haskell.yaml
-  when: stack_installation.stat.exists == False
+  when: not stack_installation.stat.exists
 
 - name: Download rbenv
   git:
