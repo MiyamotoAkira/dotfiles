@@ -4,11 +4,12 @@
     dest: "{{ tmp_directory.path }}"
     remote_src: yes
     creates: "{{ tmp_directory.path }}/aws"
-  register: aws_installer
 
 - name: Install AWS cli
-  become: yes
-  command: "{{ aws_installer.dest }}/aws/install"
+  # become: yes
+  command:
+    cmd: "{{ tmp_directory.path }}/aws/install"
+    creates: ~/.local/bin/aws
 
 - name: Install AWS Vault
   get_url:
