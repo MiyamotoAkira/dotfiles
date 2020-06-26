@@ -13,17 +13,11 @@
     name: jq
     state: present
 
-- name: Add deb elixir repo
+- name: Download deb elixir repo
   become: yes
-  apt_repository:
-    repo: deb http://binaries.erlang-solutions.com/debian buster Release
-    state: present
-    update-cache: no
+  apt:
+    deb: https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
   when: ansible_distribution == 'Linux Mint'
-
-- name: Update cache
-  become: yes
-  command: apt update --allow-releaseinfo-change
 
 - name: Install Erlang
   become: yes
