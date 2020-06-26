@@ -16,7 +16,7 @@
 - name: Add deb elixir repo
   become: yes
   apt_repository:
-    repo: deb http://binaries.erlang-solutions.com/debian stretch contrib
+    repo: deb http://binaries.erlang-solutions.com/debian buster Release
     state: present
   when: ansible_distribution == 'Linux Mint'
 
