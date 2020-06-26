@@ -18,7 +18,12 @@
   apt_repository:
     repo: deb http://binaries.erlang-solutions.com/debian buster Release
     state: present
+    update-cache: no
   when: ansible_distribution == 'Linux Mint'
+
+- name: Update cache
+  become: yes
+  command: apt update --allow-releaseinfo-change
 
 - name: Install Erlang
   become: yes
