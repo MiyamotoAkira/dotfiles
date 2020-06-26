@@ -1,5 +1,6 @@
 - name: Check if bat is installed
   command: dpkg-query -l bat
+  ignore_errors: yes
   register: bat_check
 
 - name: Download bat
