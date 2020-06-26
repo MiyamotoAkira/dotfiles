@@ -15,8 +15,9 @@
 
 - name: Download deb elixir repo
   become: yes
-  apt:
-    deb: https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
+  apt_repository:
+    repo: deb http://binaries.erlang-solutions.com/debian bionic contrib
+    state: present
   when: ansible_distribution == 'Linux Mint'
 
 - name: Install Erlang
