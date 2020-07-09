@@ -7,5 +7,5 @@
 - name: Install Slack
   become: yes
   dnf:
-    name: https://downloads.slack-edge.com/linux_releases/slack-4.4.3-0.1.fc21.x86_64.rpm
+    name: https://downloads.slack-edge.com/linux_releases/slack-4.7.0-0.1.fc21.x86_64.rpm
     state: present
