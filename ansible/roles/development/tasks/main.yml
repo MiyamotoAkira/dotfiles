@@ -146,13 +146,15 @@
 
 - name: Install virtualenv
   become: yes
-  pip:
-    name: virtualenv
+  command:
+    cmd: pip install virtualenv
+    creates: /usr/local/bin/virtualenv
 
 - name: Install virtualenvwrapper
   become: yes
-  pip:
-    name: virtualenvwrapper
+  command:
+    cmd: pip install virtualenvwrapper
+    creates: /usr/local/bin/virtualenvwrapper.sh
 
 - name: Download sdkman
   get_url:
