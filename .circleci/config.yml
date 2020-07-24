@@ -6,7 +6,7 @@ jobs:
       - image: linuxmintd/mint20-amd64
     steps:
       - checkout
-      - run: common/create_user.sh
+      - run: mint/create_user.sh
       - run:
           name: Full setup
           command: |
@@ -18,7 +18,7 @@ jobs:
       - image: jorgegueorguiev/fedora-sudo
     steps:
       - checkout
-      - run: common/create_user.sh
+      - run: fedora/create_user.sh
       - run:
           name: Full setup
           command: |
