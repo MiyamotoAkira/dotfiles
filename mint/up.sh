@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
-sudo apt-get -y install python3-requests
 sudo apt-get update
+sudo apt-get -y install python3-requests
 sudo apt-get -y upgrade
 
 sudo apt-add-repository --yes ppa:ansible/ansible
