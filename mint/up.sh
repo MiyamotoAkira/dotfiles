@@ -6,10 +6,13 @@ sudo apt-get update
 sudo apt-get -y install software-properties-common apt-transport-https python3-requests
 sudo apt-get -y upgrade
 
-sudo apt-add-repository --yes ppa:ansible/ansible
-sudo apt update
-sudo apt autoremove -y
-sudo apt install ansible -y
+
+### Until the Ubuntu/ansible issue is resolved
+# sudo apt-add-repository --yes ppa:ansible/ansible
+# sudo apt update
+# sudo apt autoremove -y
+# sudo apt install ansible -y
+pip install ansible
 
 ansible-playbook ansible/full.yml
 # # Basic packages
