@@ -28,14 +28,14 @@
 - name: Install Screen on Mint
   become: yes
   apt:
-    deb: https://download.screen.so/desktop-app/linux/2.1.0/screen-desktop_2.1.0_amd64.deb
+    deb: https://download.screen.so/desktop-app/linux/2.1.5/screen-desktop_2.1.5_amd64.deb
     state: present
   when: ansible_distribution == 'Linux Mint'
 
 - name: Install Screen on Fedora
   become: yes
   dnf:
-    name: https://download.screen.so/desktop-app/linux/2.1.0/screen-desktop-2.1.0-1.x86_64.rpm
+    name: https://download.screen.so/desktop-app/linux/2.1.5/screen-desktop-2.1.5-1.x86_64.rpm
     state: present
   when: ansible_distribution == 'Fedora'
 
