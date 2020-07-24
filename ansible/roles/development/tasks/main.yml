@@ -16,7 +16,7 @@
 - name: Download deb elixir repo
   become: yes
   apt_repository:
-    repo: deb http://binaries.erlang-solutions.com/debian bionic contrib
+    repo: deb http://binaries.erlang-solutions.com/debian focal contrib
     state: present
   when: ansible_distribution == 'Linux Mint'
 
@@ -46,9 +46,9 @@
 #     repo: "{{ item }}"
 #     state: present
 #   loop:
-#       - "deb http://archive.ubuntu.com/ubuntu/ bionic universe"
-#       - "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe"
-#       - "deb http://security.ubuntu.com/ubuntu/ bionic-security universe"
+#       - "deb http://archive.ubuntu.com/ubuntu/ focal universe"
+#       - "deb http://archive.ubuntu.com/ubuntu/ focal-updates universe"
+#       - "deb http://security.ubuntu.com/ubuntu/ focal-security universe"
 #   when: ansible_distribution == 'Linux Mint'
 
 - name: Add yum dotnet repo
