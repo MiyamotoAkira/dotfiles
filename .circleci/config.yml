@@ -6,14 +6,24 @@ jobs:
       - image: linuxmintd/mint20-amd64
     steps:
       - checkout
-      - run: mint/up.sh
+      - run: common/create_user.sh
+      - run:
+          name: Full setup
+          command: |
+            su - akira
+            mint/up.sh
       # - run: ./test.sh
   fedora:
     docker:
       - image: jorgegueorguiev/fedora-sudo
     steps:
       - checkout
-      - run: fedora/up.sh
+      - run: common/create_user.sh
+      - run:
+          name: Full setup
+          command: |
+            su - akira
+            fedora/up.sh
       # - run: ./test.sh
 
 workflows:
