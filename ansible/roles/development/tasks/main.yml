@@ -7,6 +7,12 @@
     name: mercurial
     state: present
 
+- name: Symbolic link for Mercurial configuration
+  file:
+    src: "{{ role_path }}/files/.hgrc"
+    dest: ~/.hgrc
+    state: link
+    
 - name: Install jq
   become: yes
   package:
