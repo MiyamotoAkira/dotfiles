@@ -42,7 +42,7 @@
 - name: Add deb dotnet repo
   become: yes
   apt:
-    deb: https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+    deb: https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
     state: present
   when: ansible_distribution == 'Linux Mint'
 

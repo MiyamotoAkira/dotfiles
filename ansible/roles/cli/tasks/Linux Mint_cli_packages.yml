@@ -5,8 +5,8 @@
 
 - name: Download bat
   get_url:
-    url: https://github.com/sharkdp/bat/releases/download/v0.15.4/bat_0.15.4_amd64.deb
-    dest: "{{ tmp_directory.path }}/bat_01.15.4_amd64.deb"
+    url: https://github.com/sharkdp/bat/releases/download/v0.16.0/bat_0.16.0_amd64.deb
+    dest: "{{ tmp_directory.path }}/bat_01.16.0_amd64.deb"
   register: bat_package
   when: bat_check.stdout.find('no packages found') != -1
 
