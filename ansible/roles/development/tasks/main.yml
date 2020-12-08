@@ -46,17 +46,6 @@
     state: present
   when: ansible_distribution == 'Linux Mint'
 
-# - name: Enable Universe
-#   become: yes
-#   apt_repository:
-#     repo: "{{ item }}"
-#     state: present
-#   loop:
-#       - "deb http://archive.ubuntu.com/ubuntu/ focal universe"
-#       - "deb http://archive.ubuntu.com/ubuntu/ focal-updates universe"
-#       - "deb http://security.ubuntu.com/ubuntu/ focal-security universe"
-#   when: ansible_distribution == 'Linux Mint'
-
 - name: Add yum dotnet repo
   become: yes
   yum_repository:
@@ -71,7 +60,13 @@
 - name: Install dotnet
   become: yes
   package:
-    name: dotnet-sdk-3.1
+    name: dotnet-sdk-5.0
+    state: present
+
+- name: Install powershell
+  become: yes
+  package:
+    name: powershell
     state: present
 
 - name: Install lein for Clojure
