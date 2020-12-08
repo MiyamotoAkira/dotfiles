@@ -9,7 +9,7 @@
   # become: yes
   command:
     cmd: "{{ tmp_directory.path }}/aws/install"
-    creates: ~/.local/bin/aws
+    creates: /usr/local/bin/aws
 
 - name: Install AWS Vault
   get_url:
