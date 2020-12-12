@@ -9,3 +9,27 @@
   apt:
     deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-4.11.1-amd64.deb
     state: present
+
+- name: Install Docker repo
+  become: yes
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+    state: present
+
+- name: Install Docker
+  become: yes
+  package:
+    name: docker-ce
+    state: present
+
+- name: Install Docker cli
+  become: yes
+  package:
+    name: docker-ce-cli
+    state: present
+
+- name: Install ContainerD
+  become: yes
+  package:
+    name: containerd.io
+    state: present
