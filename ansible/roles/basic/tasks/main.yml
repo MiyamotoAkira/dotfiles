@@ -17,7 +17,7 @@
 
 - name: Create external directory
   file:
-    path: "{{ code_directory.path }}/external"
+    path: "{{ code_directory.path }}/externals"
     state: directory
 
 - name: Create codurance directory
