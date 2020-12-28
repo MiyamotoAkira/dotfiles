@@ -10,6 +10,12 @@
     deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-4.11.1-amd64.deb
     state: present
 
+- name: Install Docker key
+  become: yes
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
 - name: Install Docker repo
   become: yes
   apt_repository:
