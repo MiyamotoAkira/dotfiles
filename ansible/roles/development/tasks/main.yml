@@ -57,10 +57,16 @@
     description: The repo for dotnet
   when: ansible_distribution == 'Fedora'
 
-- name: Install dotnet
+- name: Install dotnet 5.0
   become: yes
   package:
     name: dotnet-sdk-5.0
+    state: present
+
+- name: Install dotnet 3.1
+  become: yes
+  package:
+    name: dotnet-sdk-3.1
     state: present
 
 - name: Install powershell
