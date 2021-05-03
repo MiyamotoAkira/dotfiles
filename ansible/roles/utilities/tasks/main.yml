@@ -25,19 +25,19 @@
     dest: "{{ bin_directory.path }}/Bitwarden-1.23.1-x86_64.AppImage"
     mode: a+x
 
-- name: Install Screen on Mint
-  become: yes
-  apt:
-    deb: https://download.screen.so/desktop-app/linux/4.0.1/screen-desktop_4.0.1_amd64.deb
-    state: present
-  when: ansible_distribution == 'Linux Mint'
+# - name: Install Screen on Mint
+#   become: yes
+#   apt:
+#     deb: https://download.screen.so/desktop-app/linux/4.0.4/screen-desktop_4.0.4_amd64.deb
+#     state: present
+#   when: ansible_distribution == 'Linux Mint'
 
-- name: Install Screen on Fedora
-  become: yes
-  dnf:
-    name: https://download.screen.so/desktop-app/linux/4.0.1/screen-desktop-4.0.1-1.x86_64.rpm
-    state: present
-  when: ansible_distribution == 'Fedora'
+# - name: Install Screen on Fedora
+#   become: yes
+#   dnf:
+#     name: https://download.screen.so/desktop-app/linux/4.0.4/screen-desktop-4.0.4-1.x86_64.rpm
+#     state: present
+#   when: ansible_distribution == 'Fedora'
 
 - name: Download OpenShot
   get_url:
