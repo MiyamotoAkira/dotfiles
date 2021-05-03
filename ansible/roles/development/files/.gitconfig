@@ -1,5 +1,5 @@
 [user]
-	email = yefo.akira@gmail.com
+	email = yefo.akira@twoormore.eu
 	name = MiyamotoAkira
 [core]
 	editor = vim
@@ -22,3 +22,7 @@
     remote = bold blue
 [credential]
 	helper = cache --timeout=28800
+[init]
+	defaultBranch = trunk
+[pull]
+	rebase = false
