@@ -2,7 +2,7 @@
 [ui]
 # name and email, e.g.
 # username = Jane Doe <jdoe@example.com>
-username = MiyamotoAkira <yefo.akira@gmail.com>
+username = MiyamotoAkira <yefo.akira@twoormore.eu>
 
 # We recommend enabling tweakdefaults to get slight improvements to
 # the UI over time. Make sure to set HGPLAIN in the environment when
