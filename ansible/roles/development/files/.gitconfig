@@ -22,6 +22,7 @@
     remote = bold blue
 [credential]
 	helper = cache --timeout=28800
+
 [init]
 	defaultBranch = trunk
 [pull]
