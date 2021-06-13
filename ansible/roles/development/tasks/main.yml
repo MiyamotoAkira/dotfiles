@@ -92,6 +92,35 @@
     dest: ~/.lein/profiles.clj
     state: link
 
+- name: Download Clojure Tools
+  get_url:
+    url: https://download.clojure.org/install/linux-install-1.10.3.855.sh
+    dest: "{{ tmp_directory.path }}/linux-install-1.10.3.855.sh"
+    mode: '0700'
+  register: clojure_tools
+
+- name: Install Clojure Tools
+  become: yes
+  command: "{{ clojure_tools.dest }}"
+  args:
+    creates: "~/usr/local/bin/clojure"
+
+- name: Clean Clojure Tools install
+  file:
+    state: absent
+    path: "{{ clojure_tools.dest }}"
+
+- name : Create folder for Clojure Tools
+  file:
+    path: ~/.clojure
+    state: directory
+
+- name: Symbolic link for Clojure deps.edn
+  file:
+    src: "{{ role_path }}/files/deps.edn"
+    dest: ~/.clojure/deps.edn
+    state: link
+
 - name: Check if NVM is installed
   stat:
     path: ~/.nvm
