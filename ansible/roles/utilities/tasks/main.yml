@@ -21,8 +21,8 @@
 
 - name: Download Bitwarden
   get_url:
-    url: https://github.com/bitwarden/desktop/releases/download/v1.23.1/Bitwarden-1.23.1-x86_64.AppImage
-    dest: "{{ bin_directory.path }}/Bitwarden-1.23.1-x86_64.AppImage"
+    url: https://github.com/bitwarden/desktop/releases/download/v1.26.5/Bitwarden-1.26.5-x86_64.AppImage
+    dest: "{{ bin_directory.path }}/Bitwarden-1.26.5-x86_64.AppImage"
     mode: a+x
 
 # - name: Install Screen on Mint
@@ -39,7 +39,7 @@
 #     state: present
 #   when: ansible_distribution == 'Fedora'
 
-- Name: Download OpenShot
+- name: Download OpenShot
   get_url:
     url: https://github.com/OpenShot/openshot-qt/releases/download/v2.5.1/OpenShot-v2.5.1-x86_64.AppImage
     dest: "{{ bin_directory.path }}/OpenShot-v2.5.1-x86_64.AppImage"
