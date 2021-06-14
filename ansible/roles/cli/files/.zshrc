@@ -12,6 +12,7 @@ source $ZSH/oh-my-zsh.sh
 # ruby
 eval "$(rbenv init -)"
 # python
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
