@@ -9,8 +9,8 @@ jobs:
       - run:
           name: Full setup
           command: |
-            sudo adduser centos --disabled-password
-            usermod -aG wheel centos
+            sudo adduser centos --disabled-password --gecos
+            usermod -aG sudo centos
             sudo su - centos -c /root/project/mint/.sh
       # - run: ./test.sh
   fedora:
