@@ -47,8 +47,8 @@
 
 - name: Download Zulip
   get_url:
-    url: https://github.com/zulip/zulip-desktop/releases/download/v5.5.0/Zulip-5.5.0-x86_64.AppImage
-    dest: "{{ bin_directory.path }}/Zulip-5.5.0-x86_64.AppImage"
+    url: https://github.com/zulip/zulip-desktop/releases/download/v5.7.0/Zulip-5.7.0-x86_64.AppImage
+    dest: "{{ bin_directory.path }}/Zulip-5.7.0-x86_64.AppImage"
     mode: a+x
 
 # - name: Install Audacity repo on Mint
