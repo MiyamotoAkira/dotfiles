@@ -10,8 +10,7 @@ jobs:
       - run:
           name: Full setup
           command: |
-            su - akira
-            mint/up.sh
+            su -c mint/up.sh - akira
       # - run: ./test.sh
   fedora:
     docker:
@@ -22,8 +21,7 @@ jobs:
       - run:
           name: Full setup
           command: |
-            su - akira
-            fedora/up.sh
+            su -c fedora/up.sh - akira
       # - run: ./test.sh
 
 workflows:
