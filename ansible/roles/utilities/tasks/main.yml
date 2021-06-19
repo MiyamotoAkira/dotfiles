@@ -60,3 +60,27 @@
 #   package:
 #     name: audacity
 #     state: present
+
+- name: Add deb teams repo
+  become: yes
+  apt_repository:
+    repo: deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main
+    state: present
+  when: ansible_distribution == 'Linux Mint'
+
+- name: Add yum teams repo
+  become: yes
+  yum_repository:
+    name: vscode
+    baseurl: https://packages.microsoft.com/yumrepos/ms-teams
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: yes
+    enabled: yes
+    description: The repo for visual studio code
+  when: ansible_distribution == 'Fedora'
+
+- name: Install Ms Teams
+  become: yes
+  package:
+    name: teams
+    state: present
