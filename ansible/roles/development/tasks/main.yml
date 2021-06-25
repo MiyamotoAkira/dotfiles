@@ -250,3 +250,27 @@
     url: https://github.com/phpbrew/phpbrew/releases/latest/download/phpbrew.phar
     dest: "{{ bin_directory.path }}/phpbrew"
     mode: a+x
+
+- name: Check for Cask
+  stat:
+    path: /home/akira/.cask/bin/cask
+  register: cask_present
+  
+- name: Download Cask
+  get_url:
+    url: https://raw.githubusercontent.com/cask/cask/master/go
+    dest: "{{ tmp_directory.path }}/cask.py"
+  register: cask_file
+  when: not cask_present.stat.exists
+
+- name: Install Cask
+  become: yes
+  shell:
+    cmd: python3 "{{ cask_file.dest }}"
+  when: not cask_present.stat.exists
+
+- name: Remove Cask
+  file:
+    path: "{{ cask_file.dest }}"
+    state: absent
+  when: not cask_present.stat.exists
