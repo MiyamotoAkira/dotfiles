@@ -20,11 +20,6 @@
     path: "{{ code_directory.path }}/externals"
     state: directory
 
-- name: Create codurance directory
-  file:
-    path: "{{ code_directory.path }}/codurance"
-    state: directory
-
 - name: Install Which
   become: yes
   dnf:
