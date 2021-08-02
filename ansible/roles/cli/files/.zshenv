@@ -19,3 +19,5 @@ export SDKMAN_DIR="/home/akira/.sdkman"
 export ANDROID_SDK="$HOME/Library/Android/sdk"
 export ANDROID_HOME="$ANDROID_SDK"
 export PATH="$ANDROID_SDK/tools:$ANDROID_SDK/tools/bin:$ANDROID_SDK/platform-tools:$PATH"
+
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
