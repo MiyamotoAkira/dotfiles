@@ -6,7 +6,7 @@
     creates: "{{ tmp_directory.path }}/aws"
 
 - name: Install AWS cli
-  # become: yes
+  become: yes
   command:
     cmd: "{{ tmp_directory.path }}/aws/install"
     creates: /usr/local/bin/aws
@@ -33,7 +33,7 @@
   apt_repository:
     repo: deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ focal main
     state: present
-  when: ansible_distribution == 'Linux Mint'
+  when: ansible_distribution == 'Linux Mint' or ansible_distribution == 'Ubuntu'
 
 - name: Install Azure
   become: yes

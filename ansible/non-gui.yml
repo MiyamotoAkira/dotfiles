@@ -1,0 +1,11 @@
+---
+- name: Configuration for non-gui systems (WSL)
+  hosts: localhost
+  roles:
+    - basic
+    - distribution
+    - cli
+    - nettools
+    - development
+    - infrastructure
+    - cloud

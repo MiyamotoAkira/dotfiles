@@ -26,11 +26,11 @@
   apt:
     name: apt-transport-https
     state: present
-  when: ansible_distribution == 'Linux Mint'
+  when: ansible_distribution == 'Linux Mint' or ansible_distribution == 'Ubuntu'
 
 - name: Install ca certificates
   become: yes
   apt:
     name: ca-certificates
     state: present
-  when: ansible_distribution == 'Linux Mint'
+  when: ansible_distribution == 'Linux Mint' or ansible_distribution == 'Ubuntu'
