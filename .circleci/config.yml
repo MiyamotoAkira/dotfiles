@@ -6,23 +6,23 @@ jobs:
       - image: linuxmintd/mint20-amd64
     steps:
       - checkout
-      - run:
-          name: Full setup
-          command: |
-            sudo adduser centos --disabled-password --gecos ""
-            usermod -aG sudo centos
-            sudo su - centos -c /root/project/mint/.sh
+      # - run:
+      #     name: Full setup
+      #     command: |
+      #       sudo adduser centos --disabled-password --gecos ""
+      #       usermod -aG sudo centos
+      #       sudo su - centos -c /root/project/mint/.sh
       # - run: ./test.sh
   fedora:
     docker:
       - image: jorgegueorguiev/fedora-sudo
     steps:
       - checkout
-      - run: fedora/create_user.sh
-      - run:
-          name: Full setup
-          command: |
-            su -c ls - akira
+      # - run: fedora/create_user.sh
+      # - run:
+      #     name: Full setup
+      #     command: |
+      #       su -c ls - akira
       # - run: ./test.sh
 
 workflows:
