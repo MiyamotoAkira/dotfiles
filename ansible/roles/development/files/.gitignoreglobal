@@ -3,3 +3,6 @@
 .\#*
 .nrepl-history
 .ac-php-conf.json
+.clj-kondo
+.calva
+.lsp
