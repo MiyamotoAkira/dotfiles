@@ -3,7 +3,7 @@ ZSH_THEME="akira"
 
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(git)
+plugins=(git mercurial)
 
 source $ZSH/oh-my-zsh.sh
 
