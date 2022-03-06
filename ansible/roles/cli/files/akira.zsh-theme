@@ -1,6 +1,3 @@
-local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[fc3f3f]%}➜ )"
-PROMPT='${ret_status} %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)$(git_prompt_status)$(hg_prompt_info)
-%{$fg_bold[yellow]%}λ %{$reset_color%}%{$fg[yellow]%}'
 
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$reset_color%}%{$fg[fc3f3f]%}"
@@ -21,3 +18,11 @@ ZSH_THEME_HG_PROMPT_PREFIX="%{$fg_bold[magenta]%}hg:(%{$fg[red]%}"
 ZSH_THEME_HG_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_HG_PROMPT_DIRTY="%{$fg[magenta]%}) %{$fg[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_HG_PROMPT_CLEAN="%{$fg[magenta]%})"
+
+local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[fc3f3f]%}➜ )"
+local first_line_right="%{$fg_bold[blue]%}[%D{%H:%M:%S}]"
+local first_line_left="${ret_status} %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)$(git_prompt_status)$(hg_prompt_info)"
+local second_line_left="%{$fg_bold[yellow]%}λ %{$reset_color%}%{$fg[yellow]%}"
+local first_line_middle=$((COLUMNS-#first_line_left))
+PROMPT='$first_line_left${(l:$first_line_middle:: :)first_line_right}
+$second_line_left'
