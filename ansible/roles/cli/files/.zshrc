@@ -50,5 +50,9 @@ if [ $(uname -r | sed -n 's/.*\( *Microsoft *\).*/\1/ip') ]; then
     LS_COLORS="$LS_COLORS:ow=90;42:"
 fi
 
+# opam configuration
+[[ ! -r /home/akira/.opam/opam-init/init.zsh ]] || source /home/akira/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "/home/akira/.sdkman/bin/sdkman-init.sh" ]] && source "/home/akira/.sdkman/bin/sdkman-init.sh"
+

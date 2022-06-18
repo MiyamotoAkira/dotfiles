@@ -75,6 +75,12 @@
     name: powershell
     state: present
 
+- name: Install Opam for OCaml
+  become: yes
+  package:
+    name: opam
+    state: present
+
 - name: Check if NVM is installed
   stat:
     path: ~/.nvm
