@@ -44,5 +44,11 @@ if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
 fi
 
 
+# We are in WSL.
+if [ $(uname -r | sed -n 's/.*\( *Microsoft *\).*/\1/ip') ]; then
+    # We want to fix the issue of colors with directories
+    LS_COLORS="$LS_COLORS:ow=90;42:"
+fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "/home/akira/.sdkman/bin/sdkman-init.sh" ]] && source "/home/akira/.sdkman/bin/sdkman-init.sh"
