@@ -47,7 +47,10 @@ fi
 # We are in WSL.
 if [ $(uname -r | sed -n 's/.*\( *Microsoft *\).*/\1/ip') ]; then
     # We want to fix the issue of colors with directories
-    LS_COLORS="$LS_COLORS:ow=90;42:"
+    LS_COLORS="$LS_COLORS:ow=90;42:tw=90;42"
+
+    eval "$(ssh-agent -s)"
+    ssh-add
 fi
 
 # opam configuration
