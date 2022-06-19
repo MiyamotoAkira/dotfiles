@@ -1,42 +1,42 @@
-- name: Download AWS cli
-  unarchive:
-    src: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-    dest: "{{ tmp_directory.path }}"
-    remote_src: yes
-    creates: "{{ tmp_directory.path }}/aws"
+# - name: Download AWS cli
+#   unarchive:
+#     src: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+#     dest: "{{ tmp_directory.path }}"
+#     remote_src: yes
+#     creates: "{{ tmp_directory.path }}/aws"
 
-- name: Install AWS cli
-  become: yes
-  command:
-    cmd: "{{ tmp_directory.path }}/aws/install"
-    creates: /usr/local/bin/aws
+# - name: Install AWS cli
+#   become: yes
+#   command:
+#     cmd: "{{ tmp_directory.path }}/aws/install"
+#     creates: /usr/local/bin/aws
 
-- name: Install AWS Vault
-  get_url:
-    url: https://github.com/99designs/aws-vault/releases/download/v5.4.4/aws-vault-linux-amd64
-    dest: "{{ bin_directory.path }}/aws-vault"
-    mode: a+x
+# - name: Install AWS Vault
+#   get_url:
+#     url: https://github.com/99designs/aws-vault/releases/download/v5.4.4/aws-vault-linux-amd64
+#     dest: "{{ bin_directory.path }}/aws-vault"
+#     mode: a+x
 
-- name: Add Azure repo on Fedora
-  become: yes
-  yum_repository:
-    name: azure-cli
-    baseurl: https://packages.microsoft.com/yumrepos/azure-cli
-    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
-    gpgcheck: yes
-    enabled: yes
-    description: The repo for Azure cli
-  when: ansible_distribution == 'Fedora'
+# - name: Add Azure repo on Fedora
+#   become: yes
+#   yum_repository:
+#     name: azure-cli
+#     baseurl: https://packages.microsoft.com/yumrepos/azure-cli
+#     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+#     gpgcheck: yes
+#     enabled: yes
+#     description: The repo for Azure cli
+#   when: ansible_distribution == 'Fedora'
 
-- name: Add Azure repo on Mint
-  become: yes
-  apt_repository:
-    repo: deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ focal main
-    state: present
-  when: ansible_distribution == 'Linux Mint' or ansible_distribution == 'Ubuntu'
+# - name: Add Azure repo on Mint
+#   become: yes
+#   apt_repository:
+#     repo: deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ focal main
+#     state: present
+#   when: ansible_distribution == 'Linux Mint' or ansible_distribution == 'Ubuntu'
 
-- name: Install Azure
-  become: yes
-  package:
-    name: azure-cli
-    state: present
+# - name: Install Azure
+#   become: yes
+#   package:
+#     name: azure-cli
+#     state: present

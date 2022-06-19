@@ -3,11 +3,11 @@
     repo: https://github.com/tfutils/tfenv.git
     dest: ~/.tfenv
 
-- name: Download terragrunt
-  get_url:
-    url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.23.26/terragrunt_linux_amd64
-    dest: "{{ bin_directory.path }}/terragrunt"
-    mode: a+x
+# - name: Download terragrunt
+#   get_url:
+#     url: https://github.com/gruntwork-io/terragrunt/releases/download/v0.23.26/terragrunt_linux_amd64
+#     dest: "{{ bin_directory.path }}/terragrunt"
+#     mode: a+x
 
 - name: Download CircleCI cli installer
   get_url:
@@ -26,11 +26,11 @@
     path: "{{ circle_install.dest }}"
     state: absent
 
-- name: Install fly for Concourse
-  unarchive:
-    src: https://github.com/concourse/concourse/releases/download/v6.3.0/fly-6.3.0-linux-amd64.tgz
-    dest: "{{ bin_directory.path }}"
-    remote_src: yes
-    creates: "{{ bin_directory.path }}/fly"
-    mode: a+x
+# - name: Install fly for Concourse
+#   unarchive:
+#     src: https://github.com/concourse/concourse/releases/download/v6.3.0/fly-6.3.0-linux-amd64.tgz
+#     dest: "{{ bin_directory.path }}"
+#     remote_src: yes
+#     creates: "{{ bin_directory.path }}/fly"
+#     mode: a+x
 

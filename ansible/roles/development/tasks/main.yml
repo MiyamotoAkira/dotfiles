@@ -96,14 +96,14 @@
   include_tasks: rust.yaml
   when: not rust_installation.stat.exists
 
-- name: Check if Stack Haskell is present
-  stat:
-    path: /usr/local/bin/stack
-  register: stack_installation
+# - name: Check if Stack Haskell is present
+#   stat:
+#     path: /usr/local/bin/stack
+#   register: stack_installation
 
-- name: Install Stack Haskell
-  include_tasks: haskell.yaml
-  when: not stack_installation.stat.exists
+# - name: Install Stack Haskell
+#   include_tasks: haskell.yaml
+#   when: not stack_installation.stat.exists
 
 - name: Download rbenv
   git:
@@ -137,17 +137,17 @@
     repo: https://github.com/pyenv/pyenv-virtualenvwrapper.git
     dest: ~/.pyenv/plugins/pyenv-virtualenvwrapper
 
-- name: Install virtualenv
-  become: yes
-  command:
-    cmd: pip install virtualenv
-    creates: /usr/local/bin/virtualenv
+# - name: Install virtualenv
+#   become: yes
+#   command:
+#     cmd: pip install virtualenv
+#     creates: /usr/local/bin/virtualenv
 
-- name: Install virtualenvwrapper
-  become: yes
-  command:
-    cmd: pip install virtualenvwrapper
-    creates: /usr/local/bin/virtualenvwrapper.sh
+# - name: Install virtualenvwrapper
+#   become: yes
+#   command:
+#     cmd: pip install virtualenvwrapper
+#     creates: /usr/local/bin/virtualenvwrapper.sh
 
 - name: Download sdkman
   get_url:
@@ -174,39 +174,39 @@
     creates: "{{ bin_directory.path }}/exercism"
     mode: a+x
 
-- name: Install php
-  become: yes
-  package:
-    name: php
-    state: present
+# - name: Install php
+#   become: yes
+#   package:
+#     name: php
+#     state: present
 
-- name: Install php-cli
-  become: yes
-  package:
-    name: php-cli
-    state: present
+# - name: Install php-cli
+#   become: yes
+#   package:
+#     name: php-cli
+#     state: present
 
-- name: Install php-bz2
-  become: yes
-  package:
-    name: php-bz2
-    state: present
+# - name: Install php-bz2
+#   become: yes
+#   package:
+#     name: php-bz2
+#     state: present
 
-- name: download composer
-  tags:
-    - composer
-  get_url:
-    url: https://getcomposer.org/download/1.10.1/composer.phar
-    dest: "{{ bin_directory.path }}/composer"
-    mode: a+x
+# - name: download composer
+#   tags:
+#     - composer
+#   get_url:
+#     url: https://getcomposer.org/download/1.10.1/composer.phar
+#     dest: "{{ bin_directory.path }}/composer"
+#     mode: a+x
 
-- name: download phpbrew
-  tags:
-    - phpbrew
-  get_url:
-    url: https://github.com/phpbrew/phpbrew/releases/latest/download/phpbrew.phar
-    dest: "{{ bin_directory.path }}/phpbrew"
-    mode: a+x
+# - name: download phpbrew
+#   tags:
+#     - phpbrew
+#   get_url:
+#     url: https://github.com/phpbrew/phpbrew/releases/latest/download/phpbrew.phar
+#     dest: "{{ bin_directory.path }}/phpbrew"
+#     mode: a+x
   
 - name: Download Cask
   git:
