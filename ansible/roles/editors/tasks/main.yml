@@ -16,6 +16,13 @@
     description: The repo for visual studio code
   when: ansible_distribution == 'Fedora'
 
+- name: Add zypper vscode repo
+  become: yes
+  community.general.zypper_repository:
+    repo: https://packages.microsoft.com/yumrepos/vscode
+    auto_import_keys: yes
+    state: present
+
 - name: Install vscode
   become: yes
   package:

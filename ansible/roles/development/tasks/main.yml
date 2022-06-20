@@ -57,6 +57,15 @@
     description: The repo for dotnet
   when: ansible_distribution == 'Fedora'
 
+- name: Add zypper dotnet repo
+  become: yes
+  community.general.zypper_repository:
+    repo: https://packages.microsoft.com/config/opensuse/15/prod.repo
+    name: microsoft-prod.repo
+    auto_import_keys: yes
+    state: present
+  when: ansible_distribution == 'openSUSE Tumbleweed'
+
 - name: Install dotnet 6.0
   become: yes
   package:
