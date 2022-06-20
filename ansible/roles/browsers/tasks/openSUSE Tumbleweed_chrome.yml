@@ -1,0 +1,6 @@
+- name: Install Chrome
+  become: yes
+  command:
+    cmd: zypper -y install google-chrome
+    creates: /usr/bin/google-chrome-stable
+    warn: false

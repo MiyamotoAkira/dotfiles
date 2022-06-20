@@ -1,0 +1,5 @@
+- name: Install libicu
+  become: yes
+  package:
+    name: libicu
+    state: present
