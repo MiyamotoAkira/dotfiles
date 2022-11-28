@@ -10,7 +10,6 @@ export PATH="$HOME/code/externals/tfenv/bin/:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
-export WORKON_HOME="$HOME/code/pythonenvs"
 export PROJECT_HOME="$HOME/code"
 
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
