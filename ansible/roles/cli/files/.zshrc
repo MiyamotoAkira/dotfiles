@@ -8,6 +8,8 @@ plugins=(git mercurial terraform)
 source $ZSH/oh-my-zsh.sh
 
 # end of setup
+ 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ruby
 eval "$(rbenv init -)"
