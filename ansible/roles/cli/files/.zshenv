@@ -19,3 +19,4 @@ export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
 export SDKMAN_DIR="/home/akira/.sdkman"
 
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export LD_LIBRARY_PATH=/usr/local/lib
