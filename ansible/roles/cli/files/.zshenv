@@ -2,7 +2,6 @@ export ZSH="/home/akira/.oh-my-zsh"
 
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.cask/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
