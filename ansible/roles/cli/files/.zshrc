@@ -3,7 +3,7 @@ ZSH_THEME="akira"
 
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(git mercurial terraform)
+plugins=(git mercurial terraform pdm)
 
 source $ZSH/oh-my-zsh.sh
 
